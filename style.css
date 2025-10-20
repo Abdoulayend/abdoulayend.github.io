@@ -3,12 +3,12 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* Arrière-plan très clair */
+    background-color: #f8f9fa;
     color: #333;
 }
 
 header {
-    background-color: #007bff; /* Bleu d'en-tête */
+    background-color: #007bff;
     color: white;
     padding: 80px 10%;
     text-align: center;
@@ -26,7 +26,7 @@ header p {
 
 .cta-button {
     display: inline-block;
-    background: #28a745; /* Vert pour l'action principale */
+    background: #28a745;
     color: white;
     padding: 10px 25px;
     text-decoration: none;
@@ -59,7 +59,7 @@ section h2 {
     margin-right: auto;
 }
 
-/* Style des compétences */
+/* --- Style des compétences --- */
 #competences {
     display: flex;
     justify-content: center;
@@ -87,44 +87,78 @@ section h2 {
 }
 
 
-/* Style des projets */
+/* --- Style des projets (GRILLE EN COLONNES et ESPACEMENT CORRIGÉ) --- */
 #projets {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     text-align: left;
     background-color: #e9ecef;
+    padding: 40px 5%; /* Espace réduit pour accueillir 3-4 colonnes */
 }
 
 .projet-card {
     background: #fff;
     padding: 20px;
     margin: 15px;
-    flex-basis: 22%; /* 4 cartes par ligne sur grand écran */
+    
+    /* Calcul pour 3 colonnes avec marges */
+    flex-basis: calc(33.333% - 30px);
+    max-width: calc(33.333% - 30px);
     min-width: 280px;
+    
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    transition: transform 0.3s ease-in-out;
+    
+    /* Pour aligner le contenu (surtout le lien "Visiter le site") en bas */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .projet-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
 }
 
+/* --- CORRECTIONS DES ESPACEMENTS INTERNES --- */
+.projet-card h3 {
+    margin-top: 0; 
+    margin-bottom: 10px; 
+    font-size: 1.25em; 
+}
+
+.projet-card .role {
+    margin-top: 5px; 
+    margin-bottom: 15px; 
+    font-style: italic;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.projet-card p {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* --- ÉLÉMENTS VISUELS --- */
 .project-image {
     max-width: 100%;
     height: auto;
     display: block;
-    margin-bottom: 15px;
+    margin: 0 auto 15px auto;
     border-radius: 4px;
 }
 
 .projet-link {
+    /* Nouvelle propriété pour pousser le lien en bas */
+    margin-top: auto; 
     display: block;
-    margin-top: 15px;
+    padding-top: 10px;
     color: #007bff;
     text-decoration: none;
     font-weight: bold;
+    text-align: center;
 }
 
 .projet-link:hover {
@@ -134,16 +168,17 @@ section h2 {
 /* Figma Embed Styling */
 .figma-embed {
     width: 100%;
-    overflow: hidden; /* Cache les barres de défilement externes */
+    overflow: hidden;
+    margin-bottom: 15px;
 }
 .figma-embed iframe {
     max-width: 100%;
-    height: 450px;
+    height: 350px; /* Hauteur ajustée pour la grille */
     display: block;
     border-radius: 5px;
 }
 
-/* Contact Section */
+/* --- Contact Section --- */
 #contact {
     text-align: center;
     padding: 60px 10%;
@@ -163,10 +198,30 @@ footer {
     font-size: 0.9em;
 }
 
-/* Media Queries pour la responsivité */
-@media (max-width: 768px) {
-    .competence-group, .projet-card {
+/* --- Media Queries pour la responsivité (Adaptabilité) --- */
+
+/* Pour les écrans de tablettes */
+@media (max-width: 992px) {
+    .competence-group {
+        flex-basis: 45%;
+        min-width: 350px;
+    }
+    .projet-card {
+        flex-basis: calc(50% - 30px); /* Passe à 2 colonnes */
+        max-width: calc(50% - 30px);
+    }
+}
+
+/* Pour les téléphones */
+@media (max-width: 576px) {
+    .competence-group {
         flex-basis: 100%;
         margin: 10px 0;
+    }
+    .projet-card {
+        flex-basis: 90%; /* Repasse à 1 colonne */
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
