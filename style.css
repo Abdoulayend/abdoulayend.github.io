@@ -17,7 +17,7 @@ h1, h2, h3 {
 }
 
 /* ======================================================================
-    BARRE DE NAVIGATION FIXE (ENTÊTE) - Nouveau Code Intégré
+    BARRE DE NAVIGATION FIXE (ENTÊTE) - CORRIGÉE
     ====================================================================== */
 #navbar {
     position: fixed; /* Reste en haut lors du défilement */
@@ -38,14 +38,14 @@ h1, h2, h3 {
 #navbar .logo {
     font-size: 1.5em;
     font-weight: 800;
-    color: #4A90E2; /* Nouveau bleu plus clair */
+    color: #2A7AD2; /* Nouveau bleu plus foncé */
     letter-spacing: 1px;
 }
 
 .nav-links {
-    /* Nouvelle règle: le bloc de liens doit pouvoir s'étendre */
+    /* Nouvelle règle: le bloc de liens doit s'étendre pour pousser le sélecteur à droite */
     flex-grow: 1; 
-    text-align: right; /* Pour centrer les liens à droite */
+    text-align: right; 
     margin-right: 20px; /* Espace avant le sélecteur de langue */
 }
 
@@ -60,17 +60,24 @@ h1, h2, h3 {
 }
 
 .nav-links a:hover {
-    color: #4A90E2; /* Nouveau bleu plus clair */
-    border-bottom: 2px solid #4A90E2; /* Nouveau bleu plus clair */
+    color: #2A7AD2; /* Nouveau bleu plus foncé */
+    border-bottom: 2px solid #2A7AD2; /* Nouveau bleu plus foncé */
 }
 
-/* SÉLECTEUR DE LANGUE */
+/* SÉLECTEUR DE LANGUE - CORRIGÉ pour rester en ligne */
+.lang-switcher {
+    /* S'assurer que le bloc des boutons de langue est aligné */
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Petit espace entre les boutons FR et EN */
+}
+
 .lang-switcher button {
     background: none;
-    border: 1px solid #4A90E2; /* Nouveau bleu plus clair */
-    color: #4A90E2; /* Nouveau bleu plus clair */
+    border: 1px solid #2A7AD2; /* Nouveau bleu plus foncé */
+    color: #2A7AD2; /* Nouveau bleu plus foncé */
     padding: 5px 10px;
-    margin-left: 5px;
+    /* margin-left: 5px; <- Suppression du margin qui créait un espace */
     cursor: pointer;
     border-radius: 5px;
     font-weight: 700;
@@ -79,7 +86,7 @@ h1, h2, h3 {
 
 .lang-switcher button.active,
 .lang-switcher button:hover {
-    background-color: #4A90E2; /* Nouveau bleu plus clair */
+    background-color: #2A7AD2; /* Nouveau bleu plus foncé */
     color: white;
 }
 
@@ -88,16 +95,15 @@ h1, h2, h3 {
     ====================================================================== */
 
 header#profil {
-    background-color: #4A90E2; /* Nouveau bleu plus clair */
-    background-image: linear-gradient(135deg, #4A90E2 0%, #63A4FF 100%); /* Nouveaux dégradés de bleu */
+    background-color: #2A7AD2; /* Nouveau bleu plus foncé */
+    background-image: linear-gradient(135deg, #2A7AD2 0%, #4D96E9 100%); /* Nouveaux dégradés de bleu */
     color: white;
-    padding: 120px 10%; /* Très grand pour un effet "héros" */
+    padding: 120px 10%; 
     text-align: center;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     /* Correction pour éviter que la barre de navigation le cache */
     padding-top: calc(120px + 60px); 
     
-    /* Nécessaire pour l'animation */
     position: relative; 
     overflow: hidden; 
     z-index: 1;
@@ -114,7 +120,7 @@ header p {
     font-size: 1.3em;
     font-weight: 300;
     margin-bottom: 35px;
-    color: #e3f2fd; /* Texte légèrement moins blanc pour le contraste */
+    color: #e3f2fd; 
 }
 
 /* BOUTONS CTA */
@@ -146,8 +152,8 @@ header p {
 }
 .secondary-button:hover {
     background-color: white;
-    color: #4A90E2; /* Nouveau bleu plus clair */
-    border: 2px solid #4A90E2; /* Nouveau bleu plus clair */
+    color: #2A7AD2; /* Nouveau bleu plus foncé */
+    border: 2px solid #2A7AD2; /* Nouveau bleu plus foncé */
 }
 
 
@@ -161,11 +167,11 @@ section {
 
 section h2 {
     text-align: center;
-    color: #4A90E2; /* Nouveau bleu plus clair */
+    color: #2A7AD2; /* Nouveau bleu plus foncé */
     margin-bottom: 60px;
     font-size: 2.5em;
     padding-bottom: 15px;
-    border-bottom: 4px solid #4A90E2; /* Nouveau bleu plus clair */
+    border-bottom: 4px solid #2A7AD2; /* Nouveau bleu plus foncé */
     display: table;
     margin-left: auto;
     margin-right: auto;
@@ -192,7 +198,7 @@ section h2 {
     padding: 30px;
     border: 1px solid #dee2e6;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Ombre plus douce */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
     transition: box-shadow 0.3s, transform 0.3s;
 }
 
@@ -202,7 +208,7 @@ section h2 {
 }
 
 .competence-group h3 {
-    color: #2C7BBF; /* Un bleu moyen pour les titres */
+    color: #1a4f78; /* Maintient un bleu foncé pour les titres de sous-section */
     border-bottom: 2px solid #e9ecef; 
     padding-bottom: 10px;
     margin-bottom: 20px;
@@ -222,8 +228,8 @@ section h2 {
     align-items: center;
 }
 .competence-group li:before {
-    content: "•"; /* Puce personnalisée */
-    color: #4A90E2; /* Nouveau bleu plus clair */
+    content: "•"; 
+    color: #2A7AD2; /* Nouveau bleu plus foncé */
     font-weight: bold;
     display: inline-block;
     width: 1em;
@@ -272,7 +278,7 @@ section h2 {
 
 .projet-card h3 {
     font-size: 1.5em;
-    color: #4A90E2; /* Nouveau bleu plus clair */
+    color: #2A7AD2; /* Nouveau bleu plus foncé */
 }
 
 .projet-card .role {
@@ -337,7 +343,7 @@ section h2 {
     margin-bottom: 10px;
 }
 #contact strong {
-    color: #4A90E2; /* Nouveau bleu plus clair */
+    color: #2A7AD2; /* Nouveau bleu plus foncé */
 }
 
 .social-links {
@@ -347,14 +353,14 @@ section h2 {
     gap: 30px;
 }
 .social-links a {
-    color: #2C7BBF; /* Un bleu moyen */
+    color: #1a4f78;
     text-decoration: none;
     font-weight: 700;
     font-size: 1.2em;
     transition: color 0.3s, transform 0.3s;
 }
 .social-links a:hover {
-    color: #4A90E2; /* Nouveau bleu plus clair */
+    color: #2A7AD2; /* Nouveau bleu plus foncé */
     transform: scale(1.05);
 }
 
@@ -377,7 +383,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Place l'animation derrière le contenu */
+    z-index: -1; 
 }
 
 /* Style de chaque bulle (div) */
@@ -387,15 +393,15 @@ footer {
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(255, 255, 255, 0.15); /* Blanc semi-transparent */
-    animation: animate 25s linear infinite; /* Animation de 25s en boucle */
-    bottom: -150px; /* Commence hors de l'écran */
+    background: rgba(255, 255, 255, 0.15); 
+    animation: animate 25s linear infinite; 
+    bottom: -150px; 
     border-radius: 50%;
 }
 
 /* Ajustement des couleurs pour le thème bleu */
 #animation-bubbles div:nth-child(even) {
-    background: rgba(74, 144, 226, 0.25); /* Nouveau bleu clair semi-transparent */
+    background: rgba(42, 122, 210, 0.25); /* Nouveau bleu plus foncé semi-transparent */
 }
 
 
@@ -420,9 +426,9 @@ footer {
     }
 
     100% {
-        transform: translateY(-1000px) rotate(720deg); /* Monte et tourne */
-        opacity: 0; /* Disparaît en haut */
-        border-radius: 50%; /* Recommence en forme de bulle */
+        transform: translateY(-1000px) rotate(720deg); 
+        opacity: 0; 
+        border-radius: 50%; 
     }
 }
 
@@ -433,7 +439,7 @@ footer {
 
 @media (max-width: 1200px) {
     .projet-card {
-        flex-basis: calc(48% - 30px); /* 2 colonnes */
+        flex-basis: calc(48% - 30px); 
         max-width: calc(48% - 30px);
     }
 }
@@ -455,7 +461,7 @@ footer {
     }
     
     .projet-card {
-        flex-basis: 100%; /* 1 colonne */
+        flex-basis: 100%; 
         max-width: 100%;
     }
     
@@ -469,28 +475,26 @@ footer {
     #navbar {
         flex-direction: column;
         align-items: flex-start;
-        padding-bottom: 20px; /* Ajout d'un peu d'espace */
+        padding-bottom: 20px; 
     }
     
     .nav-links {
-        /* Correction: force le bloc de liens à revenir en ligne sur mobile pour conserver les liens les uns après les autres */
         display: flex; 
         flex-direction: row; 
-        flex-wrap: wrap; /* Permet aux liens de sauter une ligne si l'écran est trop petit */
+        flex-wrap: wrap; 
         margin-top: 10px;
         width: 100%;
-        text-align: left; /* Aligner à gauche sur mobile */
+        text-align: left; 
         margin-right: 0;
     }
     
     .nav-links a {
-        margin: 5px 10px 5px 0; /* Espacement ajusté */
+        margin: 5px 10px 5px 0; 
         padding: 5px 0;
     }
     
     .lang-switcher {
         margin-top: 10px;
-        /* Positionne le sélecteur de langue tout à droite sur mobile */
         align-self: flex-end; 
     }
     
