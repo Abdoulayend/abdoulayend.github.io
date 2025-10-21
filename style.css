@@ -2,7 +2,7 @@
     0. VARIABLES DE COULEUR (Facilite le changement futur)
     ====================================================================== */
 :root {
-    --color-primary: #004F8C; /* Bleu principal (sobriété) */
+    --color-primary: #004F8C; /* Bleu principal SOBRE */
     --color-secondary: #28a745; /* Vert (boutons CTA) */
     --color-text: #343a40; /* Texte foncé */
     --color-background-light: #f4f6f9; /* Arrière-plan clair */
@@ -31,11 +31,11 @@ h1, h2, h3 {
 
 strong {
     font-weight: 700;
-    color: var(--color-text); /* Par défaut, le texte fort est la couleur du texte normal */
+    color: var(--color-text); 
 }
 
 /* ======================================================================
-    2. BARRE DE NAVIGATION (NAVBAR)
+    2. BARRE DE NAVIGATION (NAVBAR) - OPTIMISÉE
     ====================================================================== */
 #navbar {
     position: fixed; 
@@ -118,6 +118,7 @@ header#profil {
     color: var(--color-white);
     padding: 150px 10%; 
     text-align: center;
+    /* Ajustement de la marge haute pour la barre fixe */
     padding-top: calc(150px + 60px); 
     
     position: relative; 
@@ -156,7 +157,7 @@ header p {
 }
 
 .cta-button:hover {
-    background-color: #1e843b; /* Vert légèrement plus foncé */
+    background-color: #1e843b; 
     transform: translateY(-2px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
@@ -200,6 +201,8 @@ section h2 {
     5. COMPÉTENCES (Minimaliste)
     ====================================================================== */
 
+/* Changement de structure pour plus de clarté dans le CSS */
+/* Assurez-vous d'avoir bien enveloppé les groupes dans un conteneur si ce n'est pas déjà fait dans l'HTML */
 #competences-container {
     display: flex;
     justify-content: center;
@@ -252,6 +255,7 @@ section h2 {
     6. PROJETS (Cartes propres)
     ====================================================================== */
 
+/* Changement de structure pour plus de clarté dans le CSS */
 #projets-container {
     display: flex;
     flex-wrap: wrap;
@@ -356,7 +360,7 @@ section h2 {
     transition: color 0.2s, transform 0.2s;
 }
 .social-links a:hover {
-    color: #1A6CA3; /* Bleu légèrement plus clair au survol */
+    color: #1A6CA3; 
     transform: scale(1.05);
 }
 
@@ -370,7 +374,7 @@ footer {
 
 
 /* ======================================================================
-    8. RESPONSIVITÉ (MEDIA QUERIES)
+    8. RESPONSIVITÉ (MEDIA QUERIES) - SIMPLIFIÉE ET ROBUSTE
     ====================================================================== */
 
 @media (max-width: 1024px) {
@@ -384,7 +388,7 @@ footer {
 @media (max-width: 768px) {
     /* MOBILE: Réorganisation de la navigation */
     #navbar {
-        flex-wrap: wrap;
+        flex-wrap: wrap; /* Permet aux éléments de sauter une ligne */
         padding: 10px 5%;
     }
     
@@ -392,7 +396,7 @@ footer {
         /* Liens de section passent en dessous, couvrant toute la largeur */
         order: 3; 
         width: 100%;
-        justify-content: space-around; 
+        justify-content: space-around; /* Centre les liens en bas */
         margin-right: 0;
         margin-top: 10px;
         padding-top: 10px;
@@ -407,7 +411,7 @@ footer {
     .lang-switcher {
         /* Boutons de langue à droite du logo */
         order: 2; 
-        margin-left: auto; 
+        margin-left: auto; /* Pousse les boutons à droite */
     }
 
     /* MOBILE: Autres ajustements */
@@ -433,7 +437,7 @@ footer {
     .cta-button {
         display: block;
         margin: 10px auto;
-        width: 100%; /* Pleine largeur pour les CTA sur mobile */
+        width: 100%; 
         max-width: 300px;
     }
 }
