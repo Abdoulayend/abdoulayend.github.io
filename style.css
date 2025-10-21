@@ -30,7 +30,7 @@ body {
     background-color: var(--color-white);
     padding: 15px 5%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky; /* ou fixed si vous préférez */
+    position: sticky; 
     top: 0;
     z-index: 100;
 }
@@ -41,11 +41,16 @@ body {
     color: var(--color-primary);
 }
 
+.nav-links {
+    display: flex;
+}
+
 .nav-links a {
     color: var(--color-text);
     text-decoration: none;
     margin-left: 20px;
     font-weight: 500;
+    transition: color 0.2s;
 }
 
 .nav-links a:hover {
@@ -218,12 +223,14 @@ section h2 {
 
 .social-links {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 .social-link {
     color: var(--color-primary);
     text-decoration: none;
-    margin: 0 15px;
     font-weight: 600;
 }
 
