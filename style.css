@@ -21,7 +21,7 @@ body {
     padding: 0;
     background-color: var(--color-background-light); 
     color: var(--color-text);
-    scroll-padding-top: 80px; /* Pour un défilement fluide sous la barre fixe */
+    scroll-padding-top: 80px; 
 }
 
 h1, h2, h3 {
@@ -35,7 +35,7 @@ strong {
 }
 
 /* ======================================================================
-    2. BARRE DE NAVIGATION (NAVBAR) - OPTIMISÉE
+    2. BARRE DE NAVIGATION (NAVBAR)
     ====================================================================== */
 #navbar {
     position: fixed; 
@@ -80,18 +80,19 @@ strong {
     color: var(--color-primary); 
 }
 
-/* SÉLECTEUR DE LANGUE */
+/* SÉLECTEUR DE LANGUE (Corrigé pour l'affichage) */
 .lang-switcher {
     display: flex;
     align-items: center;
-    gap: 5px; 
+    gap: 8px; /* Augmenter l'espace entre les boutons */
+    margin-left: 15px; 
 }
 
 .lang-switcher button {
     background: none;
-    border: 1px solid var(--color-primary); 
-    color: var(--color-primary); 
-    padding: 5px 10px;
+    border: none; /* Retirer la bordure par défaut */
+    color: var(--color-text); 
+    padding: 5px 8px;
     cursor: pointer;
     border-radius: 4px;
     font-weight: 600;
@@ -100,13 +101,15 @@ strong {
 }
 
 .lang-switcher button.active {
-    background-color: var(--color-primary); 
+    background-color: var(--color-primary); /* Bleu actif */
     color: var(--color-white);
+    border: 1px solid var(--color-primary); /* Ajouter une bordure pour l'état actif */
 }
 .lang-switcher button:not(.active):hover {
-    background-color: var(--color-primary); 
-    color: var(--color-white);
+    color: var(--color-primary); 
+    text-decoration: underline;
 }
+
 
 /* ======================================================================
     3. HEADER / PROFIL (SECTION HÉROS)
@@ -118,7 +121,6 @@ header#profil {
     color: var(--color-white);
     padding: 150px 10%; 
     text-align: center;
-    /* Ajustement de la marge haute pour la barre fixe */
     padding-top: calc(150px + 60px); 
     
     position: relative; 
@@ -198,11 +200,9 @@ section h2 {
 
 
 /* ======================================================================
-    5. COMPÉTENCES (Minimaliste)
+    5. COMPÉTENCES (Cible le nouveau conteneur)
     ====================================================================== */
 
-/* Changement de structure pour plus de clarté dans le CSS */
-/* Assurez-vous d'avoir bien enveloppé les groupes dans un conteneur si ce n'est pas déjà fait dans l'HTML */
 #competences-container {
     display: flex;
     justify-content: center;
@@ -252,10 +252,9 @@ section h2 {
 
 
 /* ======================================================================
-    6. PROJETS (Cartes propres)
+    6. PROJETS (Cible le nouveau conteneur)
     ====================================================================== */
 
-/* Changement de structure pour plus de clarté dans le CSS */
 #projets-container {
     display: flex;
     flex-wrap: wrap;
@@ -374,7 +373,7 @@ footer {
 
 
 /* ======================================================================
-    8. RESPONSIVITÉ (MEDIA QUERIES) - SIMPLIFIÉE ET ROBUSTE
+    8. RESPONSIVITÉ (MEDIA QUERIES)
     ====================================================================== */
 
 @media (max-width: 1024px) {
@@ -388,7 +387,7 @@ footer {
 @media (max-width: 768px) {
     /* MOBILE: Réorganisation de la navigation */
     #navbar {
-        flex-wrap: wrap; /* Permet aux éléments de sauter une ligne */
+        flex-wrap: wrap; 
         padding: 10px 5%;
     }
     
@@ -396,7 +395,7 @@ footer {
         /* Liens de section passent en dessous, couvrant toute la largeur */
         order: 3; 
         width: 100%;
-        justify-content: space-around; /* Centre les liens en bas */
+        justify-content: space-around; 
         margin-right: 0;
         margin-top: 10px;
         padding-top: 10px;
@@ -411,7 +410,7 @@ footer {
     .lang-switcher {
         /* Boutons de langue à droite du logo */
         order: 2; 
-        margin-left: auto; /* Pousse les boutons à droite */
+        margin-left: auto; 
     }
 
     /* MOBILE: Autres ajustements */
