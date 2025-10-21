@@ -1,5 +1,17 @@
 /* ======================================================================
-    BASE & TYPOGRAPHIE
+    0. VARIABLES DE COULEUR (Facilite le changement futur)
+    ====================================================================== */
+:root {
+    --color-primary: #004F8C; /* Bleu principal (sobriété) */
+    --color-secondary: #28a745; /* Vert (boutons CTA) */
+    --color-text: #343a40; /* Texte foncé */
+    --color-background-light: #f4f6f9; /* Arrière-plan clair */
+    --color-white: #ffffff;
+    --color-gray-border: #dee2e6;
+}
+
+/* ======================================================================
+    1. BASE & TYPOGRAPHIE
     ====================================================================== */
 
 body {
@@ -7,8 +19,9 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f6f9; /* Arrière-plan général très clair et doux */
-    color: #343a40;
+    background-color: var(--color-background-light); 
+    color: var(--color-text);
+    scroll-padding-top: 80px; /* Pour un défilement fluide sous la barre fixe */
 }
 
 h1, h2, h3 {
@@ -16,53 +29,55 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
+strong {
+    font-weight: 700;
+    color: var(--color-text); /* Par défaut, le texte fort est la couleur du texte normal */
+}
+
 /* ======================================================================
-    BARRE DE NAVIGATION FIXE (ENTÊTE) - VERSION FINALE
+    2. BARRE DE NAVIGATION (NAVBAR)
     ====================================================================== */
 #navbar {
     position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
-    background-color: white; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-white); 
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
     z-index: 1000; 
     
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    transition: background-color 0.3s;
 }
 
 #navbar .logo {
     font-size: 1.5em;
     font-weight: 800;
-    color: #004F8C; /* Nouveau bleu sobre */
+    color: var(--color-primary); 
     letter-spacing: 1px;
 }
 
 .nav-links {
-    display: flex; /* S'assure que les liens sont en ligne */
+    display: flex; 
     align-items: center;
     flex-grow: 1; 
-    justify-content: flex-end; /* Aligne les liens à droite */
+    justify-content: flex-end; 
     margin-right: 20px;
 }
 
 .nav-links a {
-    color: #343a40;
+    color: var(--color-text);
     text-decoration: none;
-    font-weight: 600;
-    margin-left: 30px;
+    font-weight: 500;
+    margin-left: 25px;
     padding: 5px 0;
-    transition: color 0.3s, border-bottom 0.3s;
-    border-bottom: 2px solid transparent;
+    transition: color 0.2s;
 }
 
 .nav-links a:hover {
-    color: #004F8C; /* Nouveau bleu sobre */
-    border-bottom: 2px solid #004F8C; /* Nouveau bleu sobre */
+    color: var(--color-primary); 
 }
 
 /* SÉLECTEUR DE LANGUE */
@@ -74,59 +89,62 @@ h1, h2, h3 {
 
 .lang-switcher button {
     background: none;
-    border: 1px solid #004F8C; /* Nouveau bleu sobre */
-    color: #004F8C; /* Nouveau bleu sobre */
+    border: 1px solid var(--color-primary); 
+    color: var(--color-primary); 
     padding: 5px 10px;
     cursor: pointer;
-    border-radius: 5px;
-    font-weight: 700;
-    transition: all 0.3s;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.2s;
+    font-size: 0.9em;
 }
 
-.lang-switcher button.active,
-.lang-switcher button:hover {
-    background-color: #004F8C; /* Nouveau bleu sobre */
-    color: white;
+.lang-switcher button.active {
+    background-color: var(--color-primary); 
+    color: var(--color-white);
+}
+.lang-switcher button:not(.active):hover {
+    background-color: var(--color-primary); 
+    color: var(--color-white);
 }
 
 /* ======================================================================
-    HEADER / PROFIL (SECTION HÉROS)
+    3. HEADER / PROFIL (SECTION HÉROS)
     ====================================================================== */
 
 header#profil {
-    background-color: #004F8C; /* Nouveau bleu sobre */
-    background-image: linear-gradient(135deg, #004F8C 0%, #1A6CA3 100%); /* Nouveau dégradé */
-    color: white;
-    padding: 120px 10%; 
+    background-color: var(--color-primary); 
+    background-image: linear-gradient(135deg, var(--color-primary) 0%, #1A6CA3 100%); 
+    color: var(--color-white);
+    padding: 150px 10%; 
     text-align: center;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    padding-top: calc(120px + 60px); 
+    padding-top: calc(150px + 60px); 
     
     position: relative; 
     overflow: hidden; 
-    z-index: 1;
 }
 
 header h1 {
-    margin-bottom: 10px;
-    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-size: 3em;
     font-weight: 800;
-    letter-spacing: 2px;
 }
 
 header p {
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: 300;
-    margin-bottom: 35px;
-    color: #e3f2fd; 
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* BOUTONS CTA */
 .cta-button {
     display: inline-block;
-    background: #28a745; 
-    color: white;
-    padding: 14px 35px;
+    background: var(--color-secondary); 
+    color: var(--color-white);
+    padding: 12px 30px;
     text-decoration: none;
     border-radius: 50px;
     margin: 10px 10px;
@@ -138,25 +156,25 @@ header p {
 }
 
 .cta-button:hover {
-    background-color: #218838;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background-color: #1e843b; /* Vert légèrement plus foncé */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .secondary-button {
     background: transparent;
-    border: 2px solid white;
-    color: white;
+    border: 2px solid var(--color-white);
+    color: var(--color-white);
 }
 .secondary-button:hover {
-    background-color: white;
-    color: #004F8C; /* Nouveau bleu sobre */
-    border: 2px solid #004F8C; /* Nouveau bleu sobre */
+    background-color: var(--color-white);
+    color: var(--color-primary); 
+    border: 2px solid var(--color-white); 
 }
 
 
 /* ======================================================================
-    TITRES DE SECTION
+    4. TITRES DE SECTION & GÉNÉRAL
     ====================================================================== */
 
 section {
@@ -165,11 +183,11 @@ section {
 
 section h2 {
     text-align: center;
-    color: #004F8C; /* Nouveau bleu sobre */
-    margin-bottom: 60px;
-    font-size: 2.5em;
-    padding-bottom: 15px;
-    border-bottom: 4px solid #004F8C; /* Nouveau bleu sobre */
+    color: var(--color-primary); 
+    margin-bottom: 50px;
+    font-size: 2.2em;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--color-primary); 
     display: table;
     margin-left: auto;
     margin-right: auto;
@@ -177,40 +195,42 @@ section h2 {
     letter-spacing: 1px;
 }
 
+
 /* ======================================================================
-    COMPÉTENCES
+    5. COMPÉTENCES (Minimaliste)
     ====================================================================== */
 
-#competences {
+#competences-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: white;
+    gap: 30px;
     padding-bottom: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .competence-group {
     flex-basis: 45%;
-    min-width: 350px;
-    margin: 20px;
-    padding: 30px;
-    border: 1px solid #dee2e6;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
-    transition: box-shadow 0.3s, transform 0.3s;
+    min-width: 300px;
+    padding: 25px;
+    border: 1px solid var(--color-gray-border);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
+    transition: box-shadow 0.3s;
+    background: var(--color-white);
 }
 
 .competence-group:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .competence-group h3 {
-    color: #1a4f78; 
-    border-bottom: 2px solid #e9ecef; 
+    color: var(--color-primary); 
+    border-bottom: 1px solid var(--color-gray-border); 
     padding-bottom: 10px;
-    margin-bottom: 20px;
-    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-size: 1.3em;
 }
 
 .competence-group ul {
@@ -219,19 +239,9 @@ section h2 {
 }
 
 .competence-group li {
-    padding: 10px 0;
+    padding: 8px 0;
     font-size: 1em;
-    border-bottom: 1px dotted #dee2e6;
-    display: flex;
-    align-items: center;
-}
-.competence-group li:before {
-    content: "•"; 
-    color: #004F8C; /* Nouveau bleu sobre */
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+    border-bottom: 1px dotted #e9ecef;
 }
 .competence-group li:last-child {
     border-bottom: none;
@@ -239,101 +249,89 @@ section h2 {
 
 
 /* ======================================================================
-    PROJETS (GRILLE OPTIMISÉE)
+    6. PROJETS (Cartes propres)
     ====================================================================== */
 
-#projets {
+#projets-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 30px;
     text-align: left;
-    background-color: #f4f6f9;
-    padding: 60px 5%; 
 }
 
 .projet-card {
-    background: #fff;
-    padding: 25px;
-    margin: 15px;
+    background: var(--color-white);
+    padding: 20px;
     
-    flex-basis: calc(33.333% - 30px);
-    max-width: calc(33.333% - 30px);
+    flex-basis: calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
     min-width: 300px;
     
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
-    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+    transition: transform 0.3s, box-shadow 0.3s;
     
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .projet-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 .projet-card h3 {
-    font-size: 1.5em;
-    color: #004F8C; /* Nouveau bleu sobre */
+    font-size: 1.4em;
+    color: var(--color-primary); 
+    margin-bottom: 10px;
 }
 
 .projet-card .role {
-    font-size: 1em;
+    font-size: 0.9em;
     color: #6c757d;
+    margin-bottom: 15px;
 }
 
-.project-image {
+.projet-card p {
+    flex-grow: 1;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+
+.project-image, .figma-embed iframe {
     max-width: 100%;
     height: auto;
-    display: block;
-    margin: 15px auto 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    margin-bottom: 15px;
 }
 
 .projet-link {
     margin-top: auto; 
     display: block;
-    padding: 10px 0;
-    color: #28a745;
+    padding-top: 10px;
+    color: var(--color-secondary);
     text-decoration: none;
-    font-weight: 700;
-    text-align: center;
-    font-size: 1.1em;
+    font-weight: 600;
+    font-size: 1em;
     border-top: 1px solid #e9ecef;
     transition: color 0.2s;
 }
 
 .projet-link:hover {
-    color: #1e7e34;
-    text-decoration: none;
+    color: #1e843b;
 }
 
-/* Figma Embed Styling */
-.figma-embed {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-.figma-embed iframe {
-    max-width: 100%;
-    height: 350px;
-    display: block;
-    border-radius: 10px;
-}
 
 /* ======================================================================
-    CONTACT & FOOTER
+    7. CONTACT & FOOTER
     ====================================================================== */
 
 #contact {
     text-align: center;
-    background-color: white;
+    background-color: var(--color-white);
     padding: 80px 10%;
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid var(--color-gray-border);
 }
 
 #contact p {
@@ -341,116 +339,85 @@ section h2 {
     margin-bottom: 10px;
 }
 #contact strong {
-    color: #004F8C; /* Nouveau bleu sobre */
+    color: var(--color-primary); 
 }
 
 .social-links {
-    margin-top: 40px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     gap: 30px;
 }
 .social-links a {
-    color: #1a4f78;
+    color: var(--color-primary);
     text-decoration: none;
-    font-weight: 700;
-    font-size: 1.2em;
-    transition: color 0.3s, transform 0.3s;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.2s, transform 0.2s;
 }
 .social-links a:hover {
-    color: #004F8C; /* Nouveau bleu sobre */
+    color: #1A6CA3; /* Bleu légèrement plus clair au survol */
     transform: scale(1.05);
 }
 
 footer {
-    background-color: #343a40;
+    background-color: var(--color-text);
     color: #adb5bd;
     text-align: center;
-    padding: 25px 0;
+    padding: 20px 0;
     font-size: 0.9em;
 }
 
-/* ======================================================================
-    ANIMATION D'ARRIÈRE-PLAN (BLUE & BLANC)
-    ====================================================================== */
-
-/* Conteneur des bulles */
-#animation-bubbles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; 
-}
-
-/* Style de chaque bulle (div) */
-#animation-bubbles div {
-    position: absolute;
-    display: block;
-    list-style: none;
-    width: 20px;
-    height: 20px;
-    background: rgba(255, 255, 255, 0.15); 
-    animation: animate 25s linear infinite; 
-    bottom: -150px; 
-    border-radius: 50%;
-}
-
-/* Ajustement des couleurs pour le thème bleu */
-#animation-bubbles div:nth-child(even) {
-    background: rgba(0, 79, 140, 0.25); /* Nouveau bleu sobre semi-transparent */
-}
-
-
-/* Définition des propriétés individuelles pour chaque bulle */
-#animation-bubbles div:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; animation-duration: 10s; }
-#animation-bubbles div:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
-#animation-bubbles div:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
-#animation-bubbles div:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
-#animation-bubbles div:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; animation-duration: 7s; }
-#animation-bubbles div:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
-#animation-bubbles div:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; animation-duration: 40s; }
-#animation-bubbles div:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 20s; }
-#animation-bubbles div:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
-#animation-bubbles div:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; }
-
-/* Définition de l'animation Keyframes */
-@keyframes animate {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0;
-    }
-
-    100% {
-        transform: translateY(-1000px) rotate(720deg); 
-        opacity: 0; 
-        border-radius: 50%; 
-    }
-}
-
 
 /* ======================================================================
-    MEDIA QUERIES (RESPONSIVITÉ) - OPTIMISATION POUR MOBILE
+    8. RESPONSIVITÉ (MEDIA QUERIES)
     ====================================================================== */
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
+    /* TABLETTE: 2 colonnes pour les projets */
     .projet-card {
-        flex-basis: calc(48% - 30px); 
-        max-width: calc(48% - 30px);
+        flex-basis: calc(50% - 15px);
+        max-width: calc(50% - 15px);
     }
 }
 
 @media (max-width: 768px) {
-    header {
-        padding: 80px 5%;
+    /* MOBILE: Réorganisation de la navigation */
+    #navbar {
+        flex-wrap: wrap;
+        padding: 10px 5%;
     }
+    
+    .nav-links {
+        /* Liens de section passent en dessous, couvrant toute la largeur */
+        order: 3; 
+        width: 100%;
+        justify-content: space-around; 
+        margin-right: 0;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid #f0f0f0;
+    }
+    
+    .nav-links a {
+        margin: 5px 5px;
+        font-size: 0.9em;
+    }
+    
+    .lang-switcher {
+        /* Boutons de langue à droite du logo */
+        order: 2; 
+        margin-left: auto; 
+    }
+
+    /* MOBILE: Autres ajustements */
+    header#profil {
+        padding: 100px 5%;
+        padding-top: calc(100px + 60px); 
+    }
+    
     header h1 {
-        font-size: 2.5em; /* Rendu plus compact sur mobile */
-    }
-    header p {
-        font-size: 1em;
+        font-size: 2em;
     }
     
     .competence-group {
@@ -459,48 +426,14 @@ footer {
     }
     
     .projet-card {
-        flex-basis: 100%; 
+        flex-basis: 100%; /* 1 colonne */
         max-width: 100%;
     }
     
     .cta-button {
         display: block;
         margin: 10px auto;
-        width: 80%;
-    }
-    
-    /* OPTIMISATION DE LA BARRE DE NAVIGATION SUR MOBILE */
-    #navbar {
-        flex-direction: row; /* FORCE le logo et le reste à rester sur une ligne */
-        flex-wrap: wrap;
-        padding: 10px 5%;
-    }
-
-    .nav-links {
-        /* Les liens de section passent en dessous du logo */
-        order: 3; 
-        width: 100%;
-        justify-content: space-around; /* Centre les liens en bas */
-        margin-right: 0;
-        margin-top: 5px;
-        padding-top: 5px;
-        border-top: 1px solid #f0f0f0;
-    }
-    
-    .nav-links a {
-        margin: 5px 10px;
-        padding: 5px 0;
-        font-size: 0.9em;
-    }
-    
-    .lang-switcher {
-        /* Les boutons de langue sont placés juste à côté du logo */
-        order: 2; 
-        margin-left: auto; /* Pousse les boutons à droite */
-    }
-    
-    /* S'assurer que le contenu principal est bien en dessous de la barre mobile */
-    header#profil {
-        padding-top: calc(120px + 80px); /* Ajustement basé sur la nouvelle taille de la barre */
+        width: 100%; /* Pleine largeur pour les CTA sur mobile */
+        max-width: 300px;
     }
 }
