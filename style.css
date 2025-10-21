@@ -17,16 +17,16 @@ h1, h2, h3 {
 }
 
 /* ======================================================================
-    BARRE DE NAVIGATION FIXE (ENTÊTE) - CORRIGÉE
+    BARRE DE NAVIGATION FIXE (ENTÊTE) - VERSION FINALE
     ====================================================================== */
 #navbar {
-    position: fixed; /* Reste en haut lors du défilement */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     background-color: white; 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Assure qu'elle est au-dessus de tout */
+    z-index: 1000; 
     
     display: flex;
     justify-content: space-between;
@@ -38,15 +38,16 @@ h1, h2, h3 {
 #navbar .logo {
     font-size: 1.5em;
     font-weight: 800;
-    color: #2A7AD2; /* Nouveau bleu plus foncé */
+    color: #004F8C; /* Nouveau bleu sobre */
     letter-spacing: 1px;
 }
 
 .nav-links {
-    /* Nouvelle règle: le bloc de liens doit s'étendre pour pousser le sélecteur à droite */
+    display: flex; /* S'assure que les liens sont en ligne */
+    align-items: center;
     flex-grow: 1; 
-    text-align: right; 
-    margin-right: 20px; /* Espace avant le sélecteur de langue */
+    justify-content: flex-end; /* Aligne les liens à droite */
+    margin-right: 20px;
 }
 
 .nav-links a {
@@ -60,24 +61,22 @@ h1, h2, h3 {
 }
 
 .nav-links a:hover {
-    color: #2A7AD2; /* Nouveau bleu plus foncé */
-    border-bottom: 2px solid #2A7AD2; /* Nouveau bleu plus foncé */
+    color: #004F8C; /* Nouveau bleu sobre */
+    border-bottom: 2px solid #004F8C; /* Nouveau bleu sobre */
 }
 
-/* SÉLECTEUR DE LANGUE - CORRIGÉ pour rester en ligne */
+/* SÉLECTEUR DE LANGUE */
 .lang-switcher {
-    /* S'assurer que le bloc des boutons de langue est aligné */
     display: flex;
     align-items: center;
-    gap: 5px; /* Petit espace entre les boutons FR et EN */
+    gap: 5px; 
 }
 
 .lang-switcher button {
     background: none;
-    border: 1px solid #2A7AD2; /* Nouveau bleu plus foncé */
-    color: #2A7AD2; /* Nouveau bleu plus foncé */
+    border: 1px solid #004F8C; /* Nouveau bleu sobre */
+    color: #004F8C; /* Nouveau bleu sobre */
     padding: 5px 10px;
-    /* margin-left: 5px; <- Suppression du margin qui créait un espace */
     cursor: pointer;
     border-radius: 5px;
     font-weight: 700;
@@ -86,7 +85,7 @@ h1, h2, h3 {
 
 .lang-switcher button.active,
 .lang-switcher button:hover {
-    background-color: #2A7AD2; /* Nouveau bleu plus foncé */
+    background-color: #004F8C; /* Nouveau bleu sobre */
     color: white;
 }
 
@@ -95,13 +94,12 @@ h1, h2, h3 {
     ====================================================================== */
 
 header#profil {
-    background-color: #2A7AD2; /* Nouveau bleu plus foncé */
-    background-image: linear-gradient(135deg, #2A7AD2 0%, #4D96E9 100%); /* Nouveaux dégradés de bleu */
+    background-color: #004F8C; /* Nouveau bleu sobre */
+    background-image: linear-gradient(135deg, #004F8C 0%, #1A6CA3 100%); /* Nouveau dégradé */
     color: white;
     padding: 120px 10%; 
     text-align: center;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    /* Correction pour éviter que la barre de navigation le cache */
     padding-top: calc(120px + 60px); 
     
     position: relative; 
@@ -152,8 +150,8 @@ header p {
 }
 .secondary-button:hover {
     background-color: white;
-    color: #2A7AD2; /* Nouveau bleu plus foncé */
-    border: 2px solid #2A7AD2; /* Nouveau bleu plus foncé */
+    color: #004F8C; /* Nouveau bleu sobre */
+    border: 2px solid #004F8C; /* Nouveau bleu sobre */
 }
 
 
@@ -167,11 +165,11 @@ section {
 
 section h2 {
     text-align: center;
-    color: #2A7AD2; /* Nouveau bleu plus foncé */
+    color: #004F8C; /* Nouveau bleu sobre */
     margin-bottom: 60px;
     font-size: 2.5em;
     padding-bottom: 15px;
-    border-bottom: 4px solid #2A7AD2; /* Nouveau bleu plus foncé */
+    border-bottom: 4px solid #004F8C; /* Nouveau bleu sobre */
     display: table;
     margin-left: auto;
     margin-right: auto;
@@ -208,7 +206,7 @@ section h2 {
 }
 
 .competence-group h3 {
-    color: #1a4f78; /* Maintient un bleu foncé pour les titres de sous-section */
+    color: #1a4f78; 
     border-bottom: 2px solid #e9ecef; 
     padding-bottom: 10px;
     margin-bottom: 20px;
@@ -229,7 +227,7 @@ section h2 {
 }
 .competence-group li:before {
     content: "•"; 
-    color: #2A7AD2; /* Nouveau bleu plus foncé */
+    color: #004F8C; /* Nouveau bleu sobre */
     font-weight: bold;
     display: inline-block;
     width: 1em;
@@ -278,7 +276,7 @@ section h2 {
 
 .projet-card h3 {
     font-size: 1.5em;
-    color: #2A7AD2; /* Nouveau bleu plus foncé */
+    color: #004F8C; /* Nouveau bleu sobre */
 }
 
 .projet-card .role {
@@ -343,7 +341,7 @@ section h2 {
     margin-bottom: 10px;
 }
 #contact strong {
-    color: #2A7AD2; /* Nouveau bleu plus foncé */
+    color: #004F8C; /* Nouveau bleu sobre */
 }
 
 .social-links {
@@ -360,7 +358,7 @@ section h2 {
     transition: color 0.3s, transform 0.3s;
 }
 .social-links a:hover {
-    color: #2A7AD2; /* Nouveau bleu plus foncé */
+    color: #004F8C; /* Nouveau bleu sobre */
     transform: scale(1.05);
 }
 
@@ -401,7 +399,7 @@ footer {
 
 /* Ajustement des couleurs pour le thème bleu */
 #animation-bubbles div:nth-child(even) {
-    background: rgba(42, 122, 210, 0.25); /* Nouveau bleu plus foncé semi-transparent */
+    background: rgba(0, 79, 140, 0.25); /* Nouveau bleu sobre semi-transparent */
 }
 
 
@@ -434,7 +432,7 @@ footer {
 
 
 /* ======================================================================
-    MEDIA QUERIES (RESPONSIVITÉ)
+    MEDIA QUERIES (RESPONSIVITÉ) - OPTIMISATION POUR MOBILE
     ====================================================================== */
 
 @media (max-width: 1200px) {
@@ -449,10 +447,10 @@ footer {
         padding: 80px 5%;
     }
     header h1 {
-        font-size: 2.8em;
+        font-size: 2.5em; /* Rendu plus compact sur mobile */
     }
     header p {
-        font-size: 1.1em;
+        font-size: 1em;
     }
     
     .competence-group {
@@ -471,35 +469,38 @@ footer {
         width: 80%;
     }
     
-    /* Adaptabilité de la barre de navigation sur mobile */
+    /* OPTIMISATION DE LA BARRE DE NAVIGATION SUR MOBILE */
     #navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding-bottom: 20px; 
+        flex-direction: row; /* FORCE le logo et le reste à rester sur une ligne */
+        flex-wrap: wrap;
+        padding: 10px 5%;
     }
-    
+
     .nav-links {
-        display: flex; 
-        flex-direction: row; 
-        flex-wrap: wrap; 
-        margin-top: 10px;
+        /* Les liens de section passent en dessous du logo */
+        order: 3; 
         width: 100%;
-        text-align: left; 
+        justify-content: space-around; /* Centre les liens en bas */
         margin-right: 0;
+        margin-top: 5px;
+        padding-top: 5px;
+        border-top: 1px solid #f0f0f0;
     }
     
     .nav-links a {
-        margin: 5px 10px 5px 0; 
+        margin: 5px 10px;
         padding: 5px 0;
+        font-size: 0.9em;
     }
     
     .lang-switcher {
-        margin-top: 10px;
-        align-self: flex-end; 
+        /* Les boutons de langue sont placés juste à côté du logo */
+        order: 2; 
+        margin-left: auto; /* Pousse les boutons à droite */
     }
     
     /* S'assurer que le contenu principal est bien en dessous de la barre mobile */
     header#profil {
-        padding-top: calc(120px + 120px); 
+        padding-top: calc(120px + 80px); /* Ajustement basé sur la nouvelle taille de la barre */
     }
 }
