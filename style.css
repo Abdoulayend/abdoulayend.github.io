@@ -1,6 +1,6 @@
 /* ======================================================================
-   BASE & TYPOGRAPHIE
-   ====================================================================== */
+    BASE & TYPOGRAPHIE
+    ====================================================================== */
 
 body {
     font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,8 +17,8 @@ h1, h2, h3 {
 }
 
 /* ======================================================================
-   BARRE DE NAVIGATION FIXE (ENTÊTE) - Nouveau Code Intégré
-   ====================================================================== */
+    BARRE DE NAVIGATION FIXE (ENTÊTE) - Nouveau Code Intégré
+    ====================================================================== */
 #navbar {
     position: fixed; /* Reste en haut lors du défilement */
     top: 0;
@@ -38,8 +38,15 @@ h1, h2, h3 {
 #navbar .logo {
     font-size: 1.5em;
     font-weight: 800;
-    color: #005A9C;
+    color: #4A90E2; /* Nouveau bleu plus clair */
     letter-spacing: 1px;
+}
+
+.nav-links {
+    /* Nouvelle règle: le bloc de liens doit pouvoir s'étendre */
+    flex-grow: 1; 
+    text-align: right; /* Pour centrer les liens à droite */
+    margin-right: 20px; /* Espace avant le sélecteur de langue */
 }
 
 .nav-links a {
@@ -53,15 +60,15 @@ h1, h2, h3 {
 }
 
 .nav-links a:hover {
-    color: #005A9C;
-    border-bottom: 2px solid #005A9C;
+    color: #4A90E2; /* Nouveau bleu plus clair */
+    border-bottom: 2px solid #4A90E2; /* Nouveau bleu plus clair */
 }
 
 /* SÉLECTEUR DE LANGUE */
 .lang-switcher button {
     background: none;
-    border: 1px solid #005A9C;
-    color: #005A9C;
+    border: 1px solid #4A90E2; /* Nouveau bleu plus clair */
+    color: #4A90E2; /* Nouveau bleu plus clair */
     padding: 5px 10px;
     margin-left: 5px;
     cursor: pointer;
@@ -72,17 +79,17 @@ h1, h2, h3 {
 
 .lang-switcher button.active,
 .lang-switcher button:hover {
-    background-color: #005A9C;
+    background-color: #4A90E2; /* Nouveau bleu plus clair */
     color: white;
 }
 
 /* ======================================================================
-   HEADER / PROFIL (SECTION HÉROS)
-   ====================================================================== */
+    HEADER / PROFIL (SECTION HÉROS)
+    ====================================================================== */
 
 header#profil {
-    background-color: #1a4f78; /* Bleu marine foncé, très pro */
-    background-image: linear-gradient(135deg, #005A9C 0%, #1a4f78 100%);
+    background-color: #4A90E2; /* Nouveau bleu plus clair */
+    background-image: linear-gradient(135deg, #4A90E2 0%, #63A4FF 100%); /* Nouveaux dégradés de bleu */
     color: white;
     padding: 120px 10%; /* Très grand pour un effet "héros" */
     text-align: center;
@@ -139,14 +146,14 @@ header p {
 }
 .secondary-button:hover {
     background-color: white;
-    color: #005A9C;
-    border: 2px solid #005A9C;
+    color: #4A90E2; /* Nouveau bleu plus clair */
+    border: 2px solid #4A90E2; /* Nouveau bleu plus clair */
 }
 
 
 /* ======================================================================
-   TITRES DE SECTION
-   ====================================================================== */
+    TITRES DE SECTION
+    ====================================================================== */
 
 section {
     padding: 80px 5%; 
@@ -154,11 +161,11 @@ section {
 
 section h2 {
     text-align: center;
-    color: #005A9C; /* Nouveau bleu primaire */
+    color: #4A90E2; /* Nouveau bleu plus clair */
     margin-bottom: 60px;
     font-size: 2.5em;
     padding-bottom: 15px;
-    border-bottom: 4px solid #005A9C;
+    border-bottom: 4px solid #4A90E2; /* Nouveau bleu plus clair */
     display: table;
     margin-left: auto;
     margin-right: auto;
@@ -167,8 +174,8 @@ section h2 {
 }
 
 /* ======================================================================
-   COMPÉTENCES
-   ====================================================================== */
+    COMPÉTENCES
+    ====================================================================== */
 
 #competences {
     display: flex;
@@ -195,7 +202,7 @@ section h2 {
 }
 
 .competence-group h3 {
-    color: #1a4f78; /* Bleu foncé pour les titres */
+    color: #2C7BBF; /* Un bleu moyen pour les titres */
     border-bottom: 2px solid #e9ecef; 
     padding-bottom: 10px;
     margin-bottom: 20px;
@@ -216,7 +223,7 @@ section h2 {
 }
 .competence-group li:before {
     content: "•"; /* Puce personnalisée */
-    color: #005A9C;
+    color: #4A90E2; /* Nouveau bleu plus clair */
     font-weight: bold;
     display: inline-block;
     width: 1em;
@@ -228,8 +235,8 @@ section h2 {
 
 
 /* ======================================================================
-   PROJETS (GRILLE OPTIMISÉE)
-   ====================================================================== */
+    PROJETS (GRILLE OPTIMISÉE)
+    ====================================================================== */
 
 #projets {
     display: flex;
@@ -265,7 +272,7 @@ section h2 {
 
 .projet-card h3 {
     font-size: 1.5em;
-    color: #005A9C;
+    color: #4A90E2; /* Nouveau bleu plus clair */
 }
 
 .projet-card .role {
@@ -315,8 +322,8 @@ section h2 {
 }
 
 /* ======================================================================
-   CONTACT & FOOTER
-   ====================================================================== */
+    CONTACT & FOOTER
+    ====================================================================== */
 
 #contact {
     text-align: center;
@@ -330,7 +337,7 @@ section h2 {
     margin-bottom: 10px;
 }
 #contact strong {
-    color: #005A9C;
+    color: #4A90E2; /* Nouveau bleu plus clair */
 }
 
 .social-links {
@@ -340,14 +347,14 @@ section h2 {
     gap: 30px;
 }
 .social-links a {
-    color: #1a4f78;
+    color: #2C7BBF; /* Un bleu moyen */
     text-decoration: none;
     font-weight: 700;
     font-size: 1.2em;
     transition: color 0.3s, transform 0.3s;
 }
 .social-links a:hover {
-    color: #005A9C;
+    color: #4A90E2; /* Nouveau bleu plus clair */
     transform: scale(1.05);
 }
 
@@ -360,8 +367,8 @@ footer {
 }
 
 /* ======================================================================
-   ANIMATION D'ARRIÈRE-PLAN (BLUE & BLANC)
-   ====================================================================== */
+    ANIMATION D'ARRIÈRE-PLAN (BLUE & BLANC)
+    ====================================================================== */
 
 /* Conteneur des bulles */
 #animation-bubbles {
@@ -388,7 +395,7 @@ footer {
 
 /* Ajustement des couleurs pour le thème bleu */
 #animation-bubbles div:nth-child(even) {
-    background: rgba(0, 90, 156, 0.25); /* Bleu semi-transparent (#005A9C) */
+    background: rgba(74, 144, 226, 0.25); /* Nouveau bleu clair semi-transparent */
 }
 
 
@@ -421,8 +428,8 @@ footer {
 
 
 /* ======================================================================
-   MEDIA QUERIES (RESPONSIVITÉ)
-   ====================================================================== */
+    MEDIA QUERIES (RESPONSIVITÉ)
+    ====================================================================== */
 
 @media (max-width: 1200px) {
     .projet-card {
@@ -462,21 +469,31 @@ footer {
     #navbar {
         flex-direction: column;
         align-items: flex-start;
+        padding-bottom: 20px; /* Ajout d'un peu d'espace */
     }
+    
     .nav-links {
+        /* Correction: force le bloc de liens à revenir en ligne sur mobile pour conserver les liens les uns après les autres */
+        display: flex; 
+        flex-direction: row; 
+        flex-wrap: wrap; /* Permet aux liens de sauter une ligne si l'écran est trop petit */
         margin-top: 10px;
-        display: flex;
-        flex-direction: column;
         width: 100%;
+        text-align: left; /* Aligner à gauche sur mobile */
+        margin-right: 0;
     }
+    
     .nav-links a {
-        margin: 5px 0;
-        padding: 5px 10px;
-        border-bottom: none;
+        margin: 5px 10px 5px 0; /* Espacement ajusté */
+        padding: 5px 0;
     }
+    
     .lang-switcher {
         margin-top: 10px;
+        /* Positionne le sélecteur de langue tout à droite sur mobile */
+        align-self: flex-end; 
     }
+    
     /* S'assurer que le contenu principal est bien en dessous de la barre mobile */
     header#profil {
         padding-top: calc(120px + 120px); 
