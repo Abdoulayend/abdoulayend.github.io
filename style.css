@@ -1,79 +1,205 @@
+/* ======================================================================
+   BASE & TYPOGRAPHIE
+   ====================================================================== */
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: #f4f6f9; /* Arrière-plan général très clair et doux */
+    color: #343a40;
 }
 
-header {
-    background-color: #007bff;
+h1, h2, h3 {
+    margin-top: 0;
+    font-weight: 700;
+}
+
+/* ======================================================================
+   BARRE DE NAVIGATION FIXE (ENTÊTE) - Nouveau Code Intégré
+   ====================================================================== */
+#navbar {
+    position: fixed; /* Reste en haut lors du défilement */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Assure qu'elle est au-dessus de tout */
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    transition: background-color 0.3s;
+}
+
+#navbar .logo {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: #005A9C;
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    color: #343a40;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 30px;
+    padding: 5px 0;
+    transition: color 0.3s, border-bottom 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: #005A9C;
+    border-bottom: 2px solid #005A9C;
+}
+
+/* SÉLECTEUR DE LANGUE */
+.lang-switcher button {
+    background: none;
+    border: 1px solid #005A9C;
+    color: #005A9C;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.lang-switcher button.active,
+.lang-switcher button:hover {
+    background-color: #005A9C;
     color: white;
-    padding: 80px 10%;
+}
+
+/* ======================================================================
+   HEADER / PROFIL (SECTION HÉROS)
+   ====================================================================== */
+
+header#profil {
+    background-color: #1a4f78; /* Bleu marine foncé, très pro */
+    background-image: linear-gradient(135deg, #005A9C 0%, #1a4f78 100%);
+    color: white;
+    padding: 120px 10%; /* Très grand pour un effet "héros" */
     text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    /* Correction pour éviter que la barre de navigation le cache */
+    padding-top: calc(120px + 60px); 
+    
+    /* Nécessaire pour l'animation */
+    position: relative; 
+    overflow: hidden; 
+    z-index: 1;
 }
 
 header h1 {
-    margin-bottom: 5px;
-    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-size: 3.5em;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
 header p {
-    font-size: 1.1em;
+    font-size: 1.3em;
     font-weight: 300;
+    margin-bottom: 35px;
+    color: #e3f2fd; /* Texte légèrement moins blanc pour le contraste */
 }
 
+/* BOUTONS CTA */
 .cta-button {
     display: inline-block;
-    background: #28a745;
+    background: #28a745; 
     color: white;
-    padding: 10px 25px;
+    padding: 14px 35px;
     text-decoration: none;
-    border-radius: 5px;
-    margin: 10px 5px;
-    transition: background-color 0.3s;
+    border-radius: 50px;
+    margin: 10px 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border: 2px solid transparent;
 }
 
 .cta-button:hover {
     background-color: #218838;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .secondary-button {
-    background: #0056b3;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+.secondary-button:hover {
+    background-color: white;
+    color: #005A9C;
+    border: 2px solid #005A9C;
 }
 
+
+/* ======================================================================
+   TITRES DE SECTION
+   ====================================================================== */
+
 section {
-    padding: 40px 10%;
+    padding: 80px 5%; 
 }
 
 section h2 {
     text-align: center;
-    color: #007bff;
-    margin-bottom: 40px;
-    font-size: 2em;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #007bff;
+    color: #005A9C; /* Nouveau bleu primaire */
+    margin-bottom: 60px;
+    font-size: 2.5em;
+    padding-bottom: 15px;
+    border-bottom: 4px solid #005A9C;
     display: table;
     margin-left: auto;
     margin-right: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* --- Style des compétences --- */
+/* ======================================================================
+   COMPÉTENCES
+   ====================================================================== */
+
 #competences {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    padding-bottom: 40px;
 }
 
 .competence-group {
-    flex-basis: 40%;
-    min-width: 300px;
+    flex-basis: 45%;
+    min-width: 350px;
     margin: 20px;
-    padding: 20px;
-    border-left: 5px solid #007bff;
+    padding: 30px;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Ombre plus douce */
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.competence-group:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.competence-group h3 {
+    color: #1a4f78; /* Bleu foncé pour les titres */
+    border-bottom: 2px solid #e9ecef; 
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
 }
 
 .competence-group ul {
@@ -82,146 +208,277 @@ section h2 {
 }
 
 .competence-group li {
-    padding: 5px 0;
-    font-size: 0.95em;
+    padding: 10px 0;
+    font-size: 1em;
+    border-bottom: 1px dotted #dee2e6;
+    display: flex;
+    align-items: center;
+}
+.competence-group li:before {
+    content: "•"; /* Puce personnalisée */
+    color: #005A9C;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+.competence-group li:last-child {
+    border-bottom: none;
 }
 
 
-/* --- Style des projets (GRILLE EN COLONNES et ESPACEMENT CORRIGÉ) --- */
+/* ======================================================================
+   PROJETS (GRILLE OPTIMISÉE)
+   ====================================================================== */
+
 #projets {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: left;
-    background-color: #e9ecef;
-    padding: 40px 5%; /* Espace réduit pour accueillir 3-4 colonnes */
+    background-color: #f4f6f9;
+    padding: 60px 5%; 
 }
 
 .projet-card {
     background: #fff;
-    padding: 20px;
+    padding: 25px;
     margin: 15px;
     
-    /* Calcul pour 3 colonnes avec marges */
     flex-basis: calc(33.333% - 30px);
     max-width: calc(33.333% - 30px);
-    min-width: 280px;
+    min-width: 300px;
     
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease-in-out;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s;
     
-    /* Pour aligner le contenu (surtout le lien "Visiter le site") en bas */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .projet-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
 
-/* --- CORRECTIONS DES ESPACEMENTS INTERNES --- */
 .projet-card h3 {
-    margin-top: 0; 
-    margin-bottom: 10px; 
-    font-size: 1.25em; 
+    font-size: 1.5em;
+    color: #005A9C;
 }
 
 .projet-card .role {
-    margin-top: 5px; 
-    margin-bottom: 15px; 
-    font-style: italic;
-    font-size: 0.9em;
-    color: #555;
+    font-size: 1em;
+    color: #6c757d;
 }
 
-.projet-card p {
-    margin-top: 10px;
-    margin-bottom: 15px;
-}
-
-/* --- ÉLÉMENTS VISUELS --- */
 .project-image {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto 15px auto;
-    border-radius: 4px;
+    margin: 15px auto 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .projet-link {
-    /* Nouvelle propriété pour pousser le lien en bas */
     margin-top: auto; 
     display: block;
-    padding-top: 10px;
-    color: #007bff;
+    padding: 10px 0;
+    color: #28a745;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
     text-align: center;
+    font-size: 1.1em;
+    border-top: 1px solid #e9ecef;
+    transition: color 0.2s;
 }
 
 .projet-link:hover {
-    text-decoration: underline;
+    color: #1e7e34;
+    text-decoration: none;
 }
 
 /* Figma Embed Styling */
 .figma-embed {
     width: 100%;
     overflow: hidden;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 .figma-embed iframe {
     max-width: 100%;
-    height: 350px; /* Hauteur ajustée pour la grille */
+    height: 350px;
     display: block;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
-/* --- Contact Section --- */
+/* ======================================================================
+   CONTACT & FOOTER
+   ====================================================================== */
+
 #contact {
     text-align: center;
-    padding: 60px 10%;
+    background-color: white;
+    padding: 80px 10%;
+    border-top: 1px solid #dee2e6;
+}
+
+#contact p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+#contact strong {
+    color: #005A9C;
+}
+
+.social-links {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 }
 .social-links a {
-    color: #007bff;
+    color: #1a4f78;
     text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 1.2em;
+    transition: color 0.3s, transform 0.3s;
+}
+.social-links a:hover {
+    color: #005A9C;
+    transform: scale(1.05);
 }
 
 footer {
     background-color: #343a40;
-    color: white;
+    color: #adb5bd;
     text-align: center;
-    padding: 15px 0;
+    padding: 25px 0;
     font-size: 0.9em;
 }
 
-/* --- Media Queries pour la responsivité (Adaptabilité) --- */
+/* ======================================================================
+   ANIMATION D'ARRIÈRE-PLAN (BLUE & BLANC)
+   ====================================================================== */
 
-/* Pour les écrans de tablettes */
-@media (max-width: 992px) {
-    .competence-group {
-        flex-basis: 45%;
-        min-width: 350px;
+/* Conteneur des bulles */
+#animation-bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place l'animation derrière le contenu */
+}
+
+/* Style de chaque bulle (div) */
+#animation-bubbles div {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.15); /* Blanc semi-transparent */
+    animation: animate 25s linear infinite; /* Animation de 25s en boucle */
+    bottom: -150px; /* Commence hors de l'écran */
+    border-radius: 50%;
+}
+
+/* Ajustement des couleurs pour le thème bleu */
+#animation-bubbles div:nth-child(even) {
+    background: rgba(0, 90, 156, 0.25); /* Bleu semi-transparent (#005A9C) */
+}
+
+
+/* Définition des propriétés individuelles pour chaque bulle */
+#animation-bubbles div:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; animation-duration: 10s; }
+#animation-bubbles div:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
+#animation-bubbles div:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
+#animation-bubbles div:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
+#animation-bubbles div:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; animation-duration: 7s; }
+#animation-bubbles div:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
+#animation-bubbles div:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; animation-duration: 40s; }
+#animation-bubbles div:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 20s; }
+#animation-bubbles div:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
+#animation-bubbles div:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; }
+
+/* Définition de l'animation Keyframes */
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
     }
-    .projet-card {
-        flex-basis: calc(50% - 30px); /* Passe à 2 colonnes */
-        max-width: calc(50% - 30px);
+
+    100% {
+        transform: translateY(-1000px) rotate(720deg); /* Monte et tourne */
+        opacity: 0; /* Disparaît en haut */
+        border-radius: 50%; /* Recommence en forme de bulle */
     }
 }
 
-/* Pour les téléphones */
-@media (max-width: 576px) {
+
+/* ======================================================================
+   MEDIA QUERIES (RESPONSIVITÉ)
+   ====================================================================== */
+
+@media (max-width: 1200px) {
+    .projet-card {
+        flex-basis: calc(48% - 30px); /* 2 colonnes */
+        max-width: calc(48% - 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 80px 5%;
+    }
+    header h1 {
+        font-size: 2.8em;
+    }
+    header p {
+        font-size: 1.1em;
+    }
+    
     .competence-group {
         flex-basis: 100%;
-        margin: 10px 0;
+        min-width: auto;
     }
+    
     .projet-card {
-        flex-basis: 90%; /* Repasse à 1 colonne */
-        max-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
+        flex-basis: 100%; /* 1 colonne */
+        max-width: 100%;
+    }
+    
+    .cta-button {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+    }
+    
+    /* Adaptabilité de la barre de navigation sur mobile */
+    #navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-links a {
+        margin: 5px 0;
+        padding: 5px 10px;
+        border-bottom: none;
+    }
+    .lang-switcher {
+        margin-top: 10px;
+    }
+    /* S'assurer que le contenu principal est bien en dessous de la barre mobile */
+    header#profil {
+        padding-top: calc(120px + 120px); 
     }
 }

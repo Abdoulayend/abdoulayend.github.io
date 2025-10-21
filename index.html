@@ -7,64 +7,84 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <nav id="navbar">
+        <div class="logo">A.N. Portfolio</div>
+        <div class="nav-links">
+            <a href="#profil" data-i18n="nav_home">Accueil</a>
+            <a href="#competences" data-i18n="nav_expertise">Expertise</a>
+            <a href="#projets" data-i18n="nav_projects">Projets</a>
+            <a href="#contact" data-i18n="nav_contact">Contact</a>
+        </div>
+        <div class="lang-switcher">
+            <button id="lang-fr" class="active">FR</button>
+            <button id="lang-en">EN</button>
+        </div>
+    </nav>
+
     <header id="profil">
+        <div id="animation-bubbles">
+            <div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div>
+        </div>
+        
         <h1>ABDOULAYE NDIAYE</h1>
-        <p>Spécialiste Polyvalent en Technologies Numériques : <strong>Cybersécurité</strong>, <strong>Développement Web/Mobile</strong> et <strong>UX/UI</strong>.</p>
-        <p class="pitch">Mon approche rigoureuse et ma curiosité me permettent de concevoir des solutions performantes, sécurisées et centrées sur l'utilisateur.</p>
+        <p data-i18n="pitch_title">Spécialiste Polyvalent en Technologies Numériques : <strong>Cybersécurité</strong>, <strong>Développement Web/Mobile</strong> et <strong>UX/UI</strong>.</p>
+        <p class="pitch" data-i18n="pitch_text">Mon approche rigoureuse et ma curiosité me permettent de concevoir des solutions performantes, sécurisées et centrées sur l'utilisateur.</p>
         
-        <a href="cv-abdoulaye-ndiaye.pdf" download class="cta-button">Télécharger mon CV</a> 
+        <a href="cv-abdoulaye-ndiaye.pdf" download class="cta-button" data-i18n="cta_cv">Télécharger mon CV</a> 
         
-        <a href="#contact" class="cta-button secondary-button">Me Contacter</a>
-        <a href="#projets" class="cta-button secondary-button">Voir mes Projets</a>
+        <a href="#contact" class="cta-button secondary-button" data-i18n="cta_contact">Me Contacter</a>
+        <a href="#projets" class="cta-button secondary-button" data-i18n="cta_projects">Voir mes Projets</a>
     </header>
 
     <section id="competences">
-        <h2>Expertise et Compétences</h2>
+        <h2 data-i18n="section_expertise">Expertise et Compétences</h2>
         
         <div class="competence-group">
-            <h3>Développement & Sécurité</h3>
+            <h3 data-i18n="sec_dev_title">Développement & Sécurité</h3>
             <ul>
-                <li><strong>Développement Mobile :</strong> Flutter, Dart, Firebase, API REST (gestion d'état).</li>
-                <li><strong>Cybersécurité :</strong> Pentesting, Cryptographie, Firewalls, OSINT (Analyste certifié).</li>
-                <li><strong>Développement Web :</strong> Java/J2EE, C, PHP/MySQL, HTML/CSS.</li>
-                <li><strong>Réseaux et Systèmes :</strong> Installation, configuration, gestion des utilisateurs.</li>
+                <li data-i18n="comp_mobile"><strong>Développement Mobile :</strong> Flutter, Dart, Firebase, API REST (gestion d'état).</li>
+                <li data-i18n="comp_security"><strong>Cybersécurité :</strong> Pentesting, Cryptographie, Firewalls, OSINT (Analyste certifié).</li>
+                <li data-i18n="comp_web"><strong>Développement Web :</strong> Java/J2EE, C, PHP/MySQL, HTML/CSS.</li>
+                <li data-i18n="comp_network"><strong>Réseaux et Systèmes :</strong> Installation, configuration, gestion des utilisateurs.</li>
             </ul>
         </div>
         
         <div class="competence-group">
-            <h3>Design & E-commerce</h3>
+            <h3 data-i18n="sec_design_title">Design & E-commerce</h3>
             <ul>
-                <li><strong>UX/UI Design :</strong> Design thinking, wireframing, prototypage (Figma, UX/UI Design - en cours).</li>
-                <li><strong>E-commerce :</strong> Shopify, Branding, Marketing numérique.</li>
-                <li><strong>Outils Créatifs :</strong> Canva, CapCut, ChatGPT, FL Studio.</li>
-                <li><strong>Interpersonnelles :</strong> Rigueur, Esprit d’analyse, Communication claire.</li>
+                <li data-i18n="comp_uxui"><strong>UX/UI Design :</strong> Design thinking, wireframing, prototypage (Figma, UX/UI Design - en cours).</li>
+                <li data-i18n="comp_ecomm"><strong>E-commerce :</strong> Shopify, Branding, Marketing numérique.</li>
+                <li data-i18n="comp_tools"><strong>Outils Créatifs :</strong> Canva, CapCut, ChatGPT, FL Studio.</li>
+                <li data-i18n="comp_soft"><strong>Interpersonnelles :</strong> Rigueur, Esprit d’analyse, Communication claire.</li>
             </ul>
         </div>
     </section>
 
     <section id="projets">
-        <h2>Mes Projets (Études de Cas)</h2>
+        <h2 data-i18n="section_projects">Mes Projets (Études de Cas)</h2>
         
         <article class="projet-card">
-            <h3>The Vastora : E-commerce & Optimisation UX/UI</h3>
-            <p class="role"><strong>Rôle :</strong> Créateur, Brand Manager, Spécialiste UX/UI et Opérations.</p>
-            <img src="thevastora-apercu.jpg.png" alt="Aperçu du site The Vastora" class="project-image">
-            <p>Création complète d’une boutique en ligne, de la stratégie de marque au parcours d'achat optimisé pour la conversion.</p>
-            <a href="https://thevastora.com" target="_blank" class="projet-link">Visiter le site →</a>
+            <h3 data-i18n="proj_vastora_title">The Vastora : E-commerce & Optimisation UX/UI</h3>
+            <p class="role" data-i18n="proj_vastora_role"><strong>Rôle :</strong> Créateur, Brand Manager, Spécialiste UX/UI et Opérations.</p>
+            <img src="thevastora-apercu.png" alt="Aperçu du site The Vastora" class="project-image">
+            <p data-i18n="proj_vastora_desc">Création complète d’une boutique en ligne, de la stratégie de marque au parcours d'achat optimisé pour la conversion.</p>
+            <a href="https://thevastora.com" target="_blank" class="projet-link" data-i18n="proj_link">Visiter le site →</a>
         </article>
 
         <article class="projet-card">
-            <h3>La Rue Du Style : Vitrine de Mode E-commerce</h3>
-            <p class="role"><strong>Rôle :</strong> Web Designer et Intégrateur E-commerce.</p>
-            <img src="laruedustyle-apercu.jpg.png" alt="Aperçu du site La Rue Du Style" class="project-image">
-            <p>Développement d'une plateforme de vente en ligne, assurant une identité visuelle forte et une navigation responsive pour la mode.</p>
-            <a href="https://laruedustyle.com" target="_blank" class="projet-link">Visiter le site →</a> 
+            <h3 data-i18n="proj_larue_title">La Rue Du Style : Vitrine de Mode E-commerce</h3>
+            <p class="role" data-i18n="proj_larue_role"><strong>Rôle :</strong> Web Designer et Intégrateur E-commerce.</p>
+            <img src="laruedustyle-apercu.png" alt="Aperçu du site La Rue Du Style" class="project-image">
+            <p data-i18n="proj_larue_desc">Développement d'une plateforme de vente en ligne, assurant une identité visuelle forte et une navigation responsive pour la mode.</p>
+            <a href="https://laruedustyle.com" target="_blank" class="projet-link" data-i18n="proj_link">Visiter le site →</a> 
         </article>
 
         <article class="projet-card" id="projet-uxui">
-            <h3>UX/UI Design : Prototype Interactif AlloPharmacie</h3>
-            <p class="role"><strong>Rôle :</strong> UX/UI Designer (Wireframing et Prototypage Figma).</p>
-            <p>Démonstration de mon processus de Design Thinking : du wireframe au prototype haute fidélité pour un parcours utilisateur spécifique.</p>
+            <h3 data-i18n="proj_allo_title">UX/UI Design : Prototype Interactif AlloPharmacie</h3>
+            <p class="role" data-i18n="proj_allo_role"><strong>Rôle :</strong> UX/UI Designer (Wireframing et Prototypage Figma).</p>
+            <p data-i18n="proj_allo_desc">Démonstration de mon processus de Design Thinking : du wireframe au prototype haute fidélité pour un parcours utilisateur spécifique.</p>
             
             <div class="figma-embed">
                 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" 
@@ -75,21 +95,21 @@
                 </iframe>
             </div>
             
-            <a href="https://www.figma.com/design/gHa7wHjZe4U9BiASy0iqIW/Untitled?node-id=46-2&t=C72WfjZ2s9XLTsRv-1" target="_blank" class="projet-link">Ouvrir le fichier Figma complet →</a>
+            <a href="https://www.figma.com/design/gHa7wHjZe4U9BiASy0iqIW/Untitled?node-id=46-2&t=C72WfjZ2s9XLTsRv-1" target="_blank" class="projet-link" data-i18n="proj_link_figma">Ouvrir le fichier Figma complet →</a>
         </article>
         
         <article class="projet-card">
-            <h3>"Libère ta voix" : Design et Intégration Web</h3>
-            <p class="role"><strong>Rôle :</strong> Web Designer et Intégrateur (Design Graphique et Intégration Web).</p>
-            <img src="libereta-voix-maquette.jpg.PNG" alt="Maquette du livre Libère ta voix" class="project-image">
-            <p>Création de l'identité visuelle de l'e-book et conception d'une page de vente efficace, intégrée sur la plateforme systeme.io.</p>
-            <a href="https://globalminds.systeme.io" target="_blank" class="projet-link">Voir la page de vente →</a>
+            <h3 data-i18n="proj_libere_title">"Libère ta voix" : Design et Intégration Web</h3>
+            <p class="role" data-i18n="proj_libere_role"><strong>Rôle :</strong> Web Designer et Intégrateur (Design Graphique et Intégration Web).</p>
+            <img src="libereta-voix-maquette.png" alt="Maquette du livre Libère ta voix" class="project-image">
+            <p data-i18n="proj_libere_desc">Création de l'identité visuelle de l'e-book et conception d'une page de vente efficace, intégrée sur la plateforme systeme.io.</p>
+            <a href="https://globalminds.systeme.io" target="_blank" class="projet-link" data-i18n="proj_link">Voir la page de vente →</a>
         </article>
     </section>
 
     <section id="contact">
-        <h2>Contactez-moi</h2>
-        <p>Discutons de votre prochain projet alliant sécurité, développement et design.</p>
+        <h2 data-i18n="section_contact">Contactez-moi</h2>
+        <p data-i18n="contact_pitch">Discutons de votre prochain projet alliant sécurité, développement et design.</p>
         <p>📧 <strong>Email :</strong> abdourito11@gmail.com</p>
         <p>📞 <strong>Téléphone :</strong> +221 78 185 57 86</p>
         <div class="social-links">
@@ -99,7 +119,9 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Abdoulaye Ndiaye. Tous droits réservés.</p>
+        <p data-i18n="footer_rights">&copy; 2025 Abdoulaye Ndiaye. Tous droits réservés.</p>
     </footer>
+    
+    <script src="translation.js"></script> 
 </body>
 </html>
