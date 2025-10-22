@@ -1,11 +1,14 @@
 /* ======================================================================
-    0. BASE & FOND
+    0. BASE & FOND - CHANGEMENT DE COULEURS
     ====================================================================== */
 :root {
-    --color-primary: #007bff; /* Bleu d'origine */
-    --color-secondary: #28a745;
-    --color-text: #333;
-    --color-background: #f8f9fa;
+    /* Couleurs inspirées du style sombre */
+    --color-primary: #007bff;          /* Bleu pour accents et liens */
+    --color-secondary: #28a745;        /* Vert pour les CTA principaux */
+    --color-dark-bg: #1e1e1e;          /* Fond principal (Gris foncé/noir) */
+    --color-card-bg: #2a2a2a;          /* Fond des cartes (Légèrement plus clair) */
+    --color-text: #e0e0e0;             /* Texte principal (Gris clair) */
+    --color-light-accent: #6c757d;     /* Accentuation pour sous-texte */
     --color-white: #ffffff;
 }
 
@@ -14,10 +17,17 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: var(--color-background); 
+    /* Nouveau fond sombre */
+    background-color: var(--color-dark-bg); 
     color: var(--color-text);
     scroll-behavior: smooth;
 }
+
+/* Les titres dans les sections (h2, h3) deviennent la couleur de texte principale */
+h2, h3 {
+    color: var(--color-text) !important; 
+}
+
 
 /* ======================================================================
     1. NAVIGATION
@@ -27,9 +37,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-white);
+    background-color: var(--color-dark-bg); /* Barre de navigation sombre */
     padding: 15px 5%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Ombre plus visible sur fond sombre */
     position: sticky; 
     top: 0;
     z-index: 100;
@@ -65,6 +75,7 @@ body {
     cursor: pointer;
     margin-left: 5px;
     border-radius: 4px;
+    transition: all 0.2s;
 }
 .lang-switcher button.active {
     background-color: var(--color-primary);
@@ -72,35 +83,33 @@ body {
 }
 
 /* ======================================================================
-    2. HEADER / PROFIL (BANDEAU BLEU) - CORRIGÉ AVEC EFFET DE PENTE
+    2. HEADER / PROFIL (Maintien du bandeau Bleu pour le contraste)
     ====================================================================== */
 
 header#profil {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary); /* Gardons le bleu pour l'identité */
     color: var(--color-white);
-    /* Augmente le padding bas pour faire de la place à la pente */
     padding: 100px 10%; 
     padding-bottom: 120px; 
     text-align: center;
-    
     position: relative; 
-    overflow: hidden; /* Cache les débordements de la pente */
+    overflow: hidden; 
 }
 
-/* Pseudo-élément pour créer la pente et supprimer la "coupure" */
+/* Pente de séparation (doit pointer vers le bas) */
 header#profil::after {
     content: '';
     position: absolute;
-    bottom: -60px; /* Déplace la base de la pente vers le bas */
+    bottom: -60px; 
     left: 0;
     width: 100%;
     height: 100px;
-    background-color: var(--color-primary); /* Doit être la même couleur que l'en-tête */
-    transform: skewY(-3deg); /* Applique l'effet de pente */
+    /* La couleur de la pente DOIT être la même que le FOND PRINCIPAL pour créer une séparation nette */
+    background-color: var(--color-dark-bg); 
+    transform: skewY(-3deg); 
     z-index: 1;
 }
 
-/* Assure que le texte et les boutons restent au-dessus de la pente */
 header#profil > * {
     position: relative;
     z-index: 2;
@@ -153,7 +162,7 @@ section {
 }
 
 section h2 {
-    color: var(--color-primary);
+    color: var(--color-text); /* Titre blanc/gris clair */
     margin-bottom: 40px;
     border-bottom: 2px solid var(--color-primary);
     padding-bottom: 5px;
@@ -161,7 +170,7 @@ section h2 {
 }
 
 /* ======================================================================
-    4. COMPÉTENCES
+    4. COMPÉTENCES (Style sombre type "carte" mieux défini)
     ====================================================================== */
 
 #competences {
@@ -175,17 +184,21 @@ section h2 {
     flex-basis: 45%; 
     min-width: 300px;
     margin: 20px 0;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: var(--color-white);
+    padding: 20px;
+    /* Couleur de fond des cartes différente du fond principal */
+    background-color: var(--color-card-bg); 
+    border-radius: 8px;
+    /* Retrait de la bordure simple et ajout d'une ombre douce */
+    border: none; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
 }
 
 .competence-group h3 {
-    color: var(--color-text);
-    border-bottom: 1px solid #eee;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
+    /* Sous-titre en couleur d'accent pour se démarquer */
+    color: var(--color-primary); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .competence-group ul {
@@ -194,42 +207,55 @@ section h2 {
 }
 
 .competence-group li {
-    padding: 5px 0;
+    padding: 8px 0;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.05); /* Lignes de séparation discrètes */
+}
+.competence-group li:last-child {
+    border-bottom: none;
 }
 
+
 /* ======================================================================
-    5. PROJETS
+    5. PROJETS (Cartes sombres et centrées)
     ====================================================================== */
 
 .projet-card {
-    text-align: left;
+    text-align: center; 
     margin: 30px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: var(--color-white);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 30px; /* Augmenter le padding pour un effet de carte plus marqué */
+    background-color: var(--color-card-bg);
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    max-width: 800px; /* Légèrement plus large pour les embeds */
 }
 
 .projet-card h3 {
     color: var(--color-primary);
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.projet-card p {
+    color: var(--color-light-accent); /* Utiliser une couleur plus claire pour le texte d'accompagnement */
 }
 
 .project-image, .figma-embed iframe {
     max-width: 100%;
-    height: auto;
+    height: auto; 
     display: block;
-    margin: 15px 0;
-    border-radius: 4px;
+    margin: 25px auto; /* Centrer l'image et l'iframe */
+    border-radius: 6px;
+    /* Ajoutez une bordure discrète aux visuels */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important; 
 }
 
 .projet-link {
     color: var(--color-secondary);
     text-decoration: none;
     font-weight: bold;
-    display: block;
-    margin-top: 10px;
+    display: inline-block; 
+    margin-top: 15px;
+    transition: color 0.2s;
 }
 
 /* ======================================================================
@@ -238,27 +264,28 @@ section h2 {
 
 #contact {
     text-align: center;
-    background-color: var(--color-white);
+    background-color: var(--color-card-bg); /* Fond contact plus clair pour la séparation */
     padding: 40px 10%;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .social-links {
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 .social-link {
     color: var(--color-primary);
     text-decoration: none;
     font-weight: 600;
+    font-size: 1.1em;
 }
 
 footer {
-    background-color: var(--color-text);
-    color: #fff;
+    background-color: #111; /* Fond du footer très sombre */
+    color: var(--color-light-accent);
     text-align: center;
     padding: 15px 0;
     font-size: 0.9em;
@@ -283,7 +310,6 @@ footer {
     .competence-group {
         flex-basis: 100%; 
     }
-    /* Ajustement de la pente sur mobile */
     header#profil {
         padding-bottom: 80px;
     }
