@@ -1,120 +1,135 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - ABDOULAYE NDIAYE | Cybersécurité, Dev, UX/UI</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABDOULAYE NDIAYE | Cybersécurité, Dev & UX/UI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    
-    <nav id="navbar">
-        <div class="logo">A.N Portfolio</div>
-        <div class="nav-links">
-            <a href="#profil">Accueil</a>
-            <a href="#competences">Expertise</a>
-            <a href="#projets">Projets</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="lang-switcher">
-            <button id="lang-fr" class="active">FR</button>
-            <button id="lang-en">EN</button>
-        </div>
-    </nav>
-    
-    <header id="profil">
-        <h1>ABDOULAYE NDIAYE</h1>
-        <p>Spécialiste Polyvalent en Technologies Numériques : <strong>Cybersécurité</strong>, <strong>Développement Web/Mobile</strong> et <strong>UX/UI</strong>.</p>
-        <p class="pitch">Mon approche rigoureuse et ma curiosité me permettent de concevoir des solutions performantes, sécurisées et centrées sur l'utilisateur.</p>
-        
-        <a href="cv-abdoulaye-ndiaye.pdf" download class="cta-button">Télécharger mon CV</a> 
-        
-        <a href="#contact" class="cta-button secondary-button">Me Contacter</a>
-        <a href="#projets" class="cta-button secondary-button">Voir mes Projets</a>
-    </header>
+    
+    <nav id="navbar">
+        <div class="logo">A.N.</div>
+        <div class="nav-links">
+            <a href="#accueil">Accueil</a>
+            <a href="#expertise">Expertise</a>
+            <a href="#projets">Projets</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="lang-switcher">
+            <button id="lang-fr" class="active">FR</button>
+            <button id="lang-en">EN</button>
+        </div>
+    </nav>
+    
+    <header id="accueil" class="hero-section">
+        <div class="hero-content">
+            <span class="tagline">Spécialiste Polyvalent & Analyste Certifié</span>
+            <h1>ABDOULAYE NDIAYE</h1>
+            <h2>Cybersécurité, Développement Web/Mobile & UX/UI</h2>
+            <p>Mon approche combine **rigueur technique** et **conception centrée utilisateur** pour livrer des solutions numériques performantes, sécurisées et complètes.</p>
+            
+            <div class="cta-group">
+                <a href="cv-abdoulaye-ndiaye.pdf" download class="cta-button primary">Télécharger mon CV <i class="fas fa-download"></i></a> 
+                <a href="#contact" class="cta-button secondary">Me Contacter</a>
+            </div>
+        </div>
+    </header>
 
-    <section id="competences">
-        <h2>Expertise et Compétences</h2>
-        
-        <div class="competence-group">
-            <h3>Développement & Sécurité</h3>
-            <ul>
-                <li><strong>Développement Mobile :</strong> Flutter, Dart, Firebase, API REST (gestion d'état).</li>
-                <li><strong>Cybersécurité :</strong> Pentesting, Cryptographie, Firewalls, OSINT (Analyste certifié).</li>
-                <li><strong>Développement Web :</strong> Java/J2EE, C, PHP/MySQL, HTML/CSS.</li>
-                <li><strong>Réseaux et Systèmes :</strong> Installation, configuration, gestion des utilisateurs.</li>
-            </ul>
-        </div>
-        
-        <div class="competence-group">
-            <h3>Design & E-commerce</h3>
-            <ul>
-                <li><strong>UX/UI Design :</strong> Design thinking, wireframing, prototypage (Figma, UX/UI Design - en cours).</li>
-                <li><strong>E-commerce :</strong> Shopify, Branding, Marketing numérique.</li>
-                <li><strong>Outils Créatifs :</strong> Canva, CapCut, ChatGPT, FL Studio.</li>
-                <li><strong>Interpersonnelles :</strong> Rigueur, Esprit d’analyse, Communication claire.</li>
-            </ul>
-        </div>
-    </section>
+    <section id="expertise" class="section-padding">
+        <h2>Expertise et Compétences 🛠️</h2>
+        <p class="section-intro">Mes compétences clés, structurées pour répondre aux défis numériques modernes.</p>
+        
+        <div class="expertise-grid">
+            
+            <div class="expertise-card large-card">
+                <i class="fas fa-shield-alt icon-large"></i>
+                <h3>Développement & Sécurité</h3>
+                <p>Spécialisation dans la création de solutions robustes et leur protection contre les menaces numériques.</p>
+                <ul class="skill-list">
+                    <li><i class="fas fa-mobile-alt"></i> **Développement Mobile :** Flutter, Dart, Firebase, API REST (gestion d'état).</li>
+                    <li><i class="fas fa-shield-virus"></i> **Cybersécurité :** Pentesting, Cryptographie, Firewalls, OSINT (Analyste certifié).</li>
+                    <li><i class="fas fa-laptop-code"></i> **Développement Web :** Java/J2EE, C, PHP/MySQL, HTML/CSS.</li>
+                    <li><i class="fas fa-network-wired"></i> **Réseaux et Systèmes :** Installation, configuration, gestion des utilisateurs.</li>
+                </ul>
+            </div>
+            
+            <div class="expertise-card large-card">
+                <i class="fas fa-palette icon-large"></i>
+                <h3>Design & E-commerce</h3>
+                <p>Conception centrée utilisateur, prototypage et mise en place de stratégies de vente en ligne.</p>
+                <ul class="skill-list">
+                    <li><i class="fas fa-drafting-compass"></i> **UX/UI Design :** Design thinking, wireframing, prototypage (Figma, UX/UI Design - en cours).</li>
+                    <li><i class="fas fa-shopping-cart"></i> **E-commerce :** Shopify, Branding, Marketing numérique.</li>
+                    <li><i class="fas fa-tools"></i> **Outils Créatifs :** Canva, CapCut, ChatGPT, FL Studio.</li>
+                    <li><i class="fas fa-handshake"></i> **Interpersonnelles :** Rigueur, Esprit d’analyse, Communication claire.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    <section id="projets">
-        <h2>Mes Projets (Études de Cas)</h2>
-        
-        <article class="projet-card">
-            <h3>The Vastora : E-commerce & Optimisation UX/UI</h3>
-            <p class="role"><strong>Rôle :</strong> Créateur, Brand Manager, Spécialiste UX/UI et Opérations.</p>
-            <img src="thevastora-apercu.jpg.png" alt="Aperçu du site The Vastora" class="project-image">
-            <p>Création complète d’une boutique en ligne, de la stratégie de marque au parcours d'achat optimisé pour la conversion.</p>
-            <a href="https://thevastora.com" target="_blank" class="projet-link">Visiter le site →</a>
-        </article>
+    <section id="projets" class="section-padding section-alt">
+        <h2>Projets Récents et Études de Cas 💡</h2>
+        <p class="section-intro">Exemples concrets de mon application technique et créative.</p>
+        
+        <div class="projets-container">
+            
+            <article class="projet-card">
+                <h3><i class="fas fa-shopping-bag"></i> The Vastora : E-commerce & Optimisation UX/UI</h3>
+                <p class="role-pro">Rôle : Créateur, Brand Manager, Spécialiste UX/UI et Opérations.</p>
+                <p>Création complète d’une boutique en ligne, de la stratégie de marque au parcours d'achat optimisé pour la conversion.</p>
+                <a href="https://thevastora.com" target="_blank" class="projet-link">Visiter le site →</a>
+            </article>
 
-        <article class="projet-card">
-            <h3>La Rue Du Style : Vitrine de Mode E-commerce</h3>
-            <p class="role"><strong>Rôle :</strong> Web Designer et Intégrateur E-commerce.</p>
-            <img src="laruedustyle-apercu.jpg.png" alt="Aperçu du site La Rue Du Style" class="project-image">
-            <p>Développement d'une plateforme de vente en ligne, assurant une identité visuelle forte et une navigation responsive pour la mode.</p>
-            <a href="https://laruedustyle.com" target="_blank" class="projet-link">Visiter le site →</a> 
-        </article>
+            <article class="projet-card">
+                <h3><i class="fas fa-tshirt"></i> La Rue Du Style : Vitrine de Mode E-commerce</h3>
+                <p class="role-pro">Rôle : Web Designer et Intégrateur E-commerce.</p>
+                <p>Développement d'une plateforme de vente en ligne, assurant une identité visuelle forte et une navigation responsive pour la mode.</p>
+                <a href="https://laruedustyle.com" target="_blank" class="projet-link">Visiter le site →</a> 
+            </article>
 
-        <article class="projet-card" id="projet-uxui">
-            <h3>UX/UI Design : Prototype Interactif AlloPharmacie</h3>
-            <p class="role"><strong>Rôle :</strong> UX/UI Designer (Wireframing et Prototypage Figma).</p>
-            <p>Démonstration de mon processus de Design Thinking : du wireframe au prototype haute fidélité pour un parcours utilisateur spécifique.</p>
-            
-            <div class="figma-embed">
-                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" 
-                    width="100%" 
-                    height="650" 
-                    src="https://embed.figma.com/proto/gHa7wHjZe4U9BiASy0iqIW/Untitled?page-id=46%3A2&node-id=210-342&p=f&viewport=632%2C-56%2C0.47&scaling=scale-down&content-scaling=fixed&starting-point-node-id=631%3A1181&embed-host=share" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-            
-            <a href="https://www.figma.com/design/gHa7wHjZe4U9BiASy0iqIW/Untitled?node-id=46-2&t=C72WfjZ2s9XLTsRv-1" target="_blank" class="projet-link">Ouvrir le fichier Figma complet →</a>
-        </article>
-        
-        <article class="projet-card">
-            <h3>"Libère ta voix" : Design et Intégration Web</h3>
-            <p class="role"><strong>Rôle :</strong> Web Designer et Intégrateur (Design Graphique et Intégration Web).</p>
-            <img src="libereta-voix-maquette.jpg.PNG" alt="Maquette du livre Libère ta voix" class="project-image">
-            <p>Création de l'identité visuelle de l'e-book et conception d'une page de vente efficace, intégrée sur la plateforme systeme.io.</p>
-            <a href="https://globalminds.systeme.io" target="_blank" class="projet-link">Voir la page de vente →</a>
-        </article>
-    </section>
+            <article class="projet-card" id="projet-uxui">
+                <h3><i class="fab fa-figma"></i> UX/UI Design : Prototype Interactif AlloPharmacie</h3>
+                <p class="role-pro">Rôle : UX/UI Designer (Wireframing et Prototypage Figma).</p>
+                <p>Démonstration de mon processus de Design Thinking : du wireframe au prototype haute fidélité pour un parcours utilisateur spécifique.</p>
+                <div class="figma-embed">
+                    <iframe style="border: 1px solid rgba(255, 255, 255, 0.1);" 
+                        width="100%" 
+                        height="450" 
+                        src="https://embed.figma.com/proto/gHa7wHjZe4U9BiASy0iqIW/Untitled?page-id=46%3A2&node-id=210-342&p=f&viewport=632%2C-56%2C0.47&scaling=scale-down&content-scaling=fixed&starting-point-node-id=631%3A1181&embed-host=share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <a href="https://www.figma.com/design/gHa7wHjZe4U9BiASy0iqIW/Untitled?node-id=46-2&t=C72WfjZ2s9XLTsRv-1" target="_blank" class="projet-link">Ouvrir le fichier Figma complet <i class="fas fa-external-link-alt"></i></a>
+            </article>
+            
+            <article class="projet-card">
+                <h3><i class="fas fa-book"></i> "Libère ta voix" : Design et Intégration Web</h3>
+                <p class="role-pro">Rôle : Web Designer et Intégrateur (Design Graphique et Intégration Web).</p>
+                <p>Création de l'identité visuelle de l'e-book et conception d'une page de vente efficace, intégrée sur la plateforme systeme.io.</p>
+                <a href="https://globalminds.systeme.io" target="_blank" class="projet-link">Voir la page de vente →</a>
+            </article>
+        </div>
+    </section>
 
-    <section id="contact">
-        <h2>Contactez-moi</h2>
-        <p>Discutons de votre prochain projet alliant sécurité, développement et design.</p>
-        <p>📧 <strong>Email :</strong> abdourito11@gmail.com</p>
-        <p>📞 <strong>Téléphone :</strong> +221 78 185 57 86</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/abdoulaye-ndiaye-9b739b36b/" target="_blank" class="social-link">LinkedIn</a>
-            <a href="https://github.com/Abdoulayend/abdoulayend.github.io" target="_blank" class="social-link">GitHub</a>
-        </div>
-    </section>
+    <section id="contact" class="section-padding">
+        <h2>Contactez-moi 📞</h2>
+        <p class="section-intro">Intéressé(e) par une collaboration ? N'hésitez pas à me joindre directement.</p>
+        
+        <div class="contact-info">
+            <p><i class="fas fa-envelope icon-small"></i> <strong>Email :</strong> abdourito11@gmail.com</p>
+            <p><i class="fas fa-phone icon-small"></i> <strong>Téléphone :</strong> +221 78 185 57 86</p>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/abdoulaye-ndiaye-9b739b36b/" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://github.com/Abdoulayend/abdoulayend.github.io" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github fa-2x"></i></a>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Abdoulaye Ndiaye. Tous droits réservés.</p>
-    </footer>
+    <footer>
+        <p>&copy; 2025 Abdoulaye Ndiaye. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>

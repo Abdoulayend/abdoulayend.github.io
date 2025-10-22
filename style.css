@@ -1,33 +1,57 @@
 /* ======================================================================
-    0. BASE & FOND - CHANGEMENT DE COULEURS
+    0. VARIABLES & BASE - BLEU DE NUIT
     ====================================================================== */
 :root {
-    /* Couleurs inspirées du style sombre */
-    --color-primary: #007bff;          /* Bleu pour accents et liens */
-    --color-secondary: #28a745;        /* Vert pour les CTA principaux */
-    --color-dark-bg: #1e1e1e;          /* Fond principal (Gris foncé/noir) */
-    --color-card-bg: #2a2a2a;          /* Fond des cartes (Légèrement plus clair) */
-    --color-text: #e0e0e0;             /* Texte principal (Gris clair) */
-    --color-light-accent: #6c757d;     /* Accentuation pour sous-texte */
+    --color-navy: #152238;          /* Bleu de Nuit Profond (Fond Principal) */
+    --color-primary: #007bff;       /* Bleu Éclatant (Accents/Bordures/Liens) */
+    --color-secondary: #28a745;     /* Vert (CTA Principal) */
+    --color-light-bg: #1f2e48;      /* Bleu de Nuit Clair (Cartes/Sections Alternatives) */
+    --color-text: #f0f0f0;          /* Texte Clair */
+    --color-fade: #a9b9cf;          /* Texte atténué */
     --color-white: #ffffff;
+    --shadow-pro: 0 6px 15px rgba(0, 0, 0, 0.4);
+    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    /* Nouveau fond sombre */
-    background-color: var(--color-dark-bg); 
+    background-color: var(--color-navy); 
     color: var(--color-text);
     scroll-behavior: smooth;
 }
 
-/* Les titres dans les sections (h2, h3) deviennent la couleur de texte principale */
-h2, h3 {
-    color: var(--color-text) !important; 
+a {
+    text-decoration: none;
+    color: var(--color-primary);
 }
 
+.section-padding {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.section-alt {
+    background-color: var(--color-light-bg);
+}
+
+h2 {
+    color: var(--color-white);
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+.section-intro {
+    color: var(--color-fade);
+    margin-bottom: 50px;
+    font-size: 1.1em;
+}
 
 /* ======================================================================
     1. NAVIGATION
@@ -37,40 +61,37 @@ h2, h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-dark-bg); /* Barre de navigation sombre */
-    padding: 15px 5%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Ombre plus visible sur fond sombre */
+    background-color: var(--color-navy); 
+    padding: 18px 5%;
+    box-shadow: var(--shadow-light);
     position: sticky; 
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #navbar .logo {
-    font-size: 1.5em;
+    font-size: 1.6em;
     font-weight: bold;
     color: var(--color-primary);
 }
 
-.nav-links {
-    display: flex;
-}
-
 .nav-links a {
     color: var(--color-text);
-    text-decoration: none;
-    margin-left: 20px;
+    margin-left: 25px;
     font-weight: 500;
-    transition: color 0.2s;
+    transition: color 0.3s, border-bottom 0.3s;
+    padding-bottom: 5px;
 }
-
 .nav-links a:hover {
     color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
 }
 
 .lang-switcher button {
     background: none;
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
+    border: 1px solid var(--color-fade);
+    color: var(--color-fade);
     padding: 5px 10px;
     cursor: pointer;
     margin-left: 5px;
@@ -79,241 +100,270 @@ h2, h3 {
 }
 .lang-switcher button.active {
     background-color: var(--color-primary);
+    border-color: var(--color-primary);
     color: var(--color-white);
 }
 
 /* ======================================================================
-    2. HEADER / PROFIL (Maintien du bandeau Bleu pour le contraste)
+    2. HEADER / HERO SECTION
     ====================================================================== */
 
-header#profil {
-    background-color: var(--color-primary); /* Gardons le bleu pour l'identité */
-    color: var(--color-white);
-    padding: 100px 10%; 
-    padding-bottom: 120px; 
+.hero-section {
+    background-color: var(--color-navy);
+    padding: 120px 5%;
     text-align: center;
-    position: relative; 
-    overflow: hidden; 
-}
-
-/* Pente de séparation (doit pointer vers le bas) */
-header#profil::after {
-    content: '';
-    position: absolute;
-    bottom: -60px; 
-    left: 0;
-    width: 100%;
-    height: 100px;
-    /* La couleur de la pente DOIT être la même que le FOND PRINCIPAL pour créer une séparation nette */
-    background-color: var(--color-dark-bg); 
-    transform: skewY(-3deg); 
-    z-index: 1;
-}
-
-header#profil > * {
-    position: relative;
-    z-index: 2;
-}
-
-header h1 {
-    margin-bottom: 10px;
-    font-size: 2.5em;
-}
-
-header p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
-}
-
-/* BOUTONS CTA */
-.cta-button {
-    display: inline-block;
-    background: var(--color-secondary);
-    color: var(--color-white);
-    padding: 10px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin: 10px;
-    transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #1e7e34;
-}
-
-.secondary-button {
-    background: transparent;
-    border: 1px solid var(--color-white);
-}
-.secondary-button:hover {
-    background-color: var(--color-white);
-    color: var(--color-primary);
-}
-
-/* ======================================================================
-    3. SECTIONS GÉNÉRALES
-    ====================================================================== */
-
-section {
-    padding: 60px 10%;
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-section h2 {
-    color: var(--color-text); /* Titre blanc/gris clair */
-    margin-bottom: 40px;
-    border-bottom: 2px solid var(--color-primary);
-    padding-bottom: 5px;
-    display: inline-block;
-}
-
-/* ======================================================================
-    4. COMPÉTENCES (Style sombre type "carte" mieux défini)
-    ====================================================================== */
-
-#competences {
-    text-align: left;
+    border-bottom: 4px solid var(--color-primary); /* Bordure pro */
+    min-height: 70vh;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
 }
 
-.competence-group {
-    flex-basis: 45%; 
-    min-width: 300px;
-    margin: 20px 0;
-    padding: 20px;
-    /* Couleur de fond des cartes différente du fond principal */
-    background-color: var(--color-card-bg); 
-    border-radius: 8px;
-    /* Retrait de la bordure simple et ajout d'une ombre douce */
-    border: none; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+.hero-content {
+    max-width: 900px;
 }
 
-.competence-group h3 {
-    /* Sous-titre en couleur d'accent pour se démarquer */
-    color: var(--color-primary); 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 10px;
+.tagline {
+    font-size: 1.1em;
+    color: var(--color-primary);
+    letter-spacing: 1px;
+    display: block;
     margin-bottom: 15px;
 }
 
-.competence-group ul {
-    list-style: none;
-    padding: 0;
-}
-
-.competence-group li {
-    padding: 8px 0;
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.05); /* Lignes de séparation discrètes */
-}
-.competence-group li:last-child {
-    border-bottom: none;
-}
-
-
-/* ======================================================================
-    5. PROJETS (Cartes sombres et centrées)
-    ====================================================================== */
-
-.projet-card {
-    text-align: center; 
-    margin: 30px auto;
-    padding: 30px; /* Augmenter le padding pour un effet de carte plus marqué */
-    background-color: var(--color-card-bg);
-    border-radius: 8px;
-    border: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    max-width: 800px; /* Légèrement plus large pour les embeds */
-}
-
-.projet-card h3 {
-    color: var(--color-primary);
+.hero-content h1 {
+    font-size: 3.5em;
     margin-bottom: 10px;
+    letter-spacing: 2px;
 }
 
-.projet-card p {
-    color: var(--color-light-accent); /* Utiliser une couleur plus claire pour le texte d'accompagnement */
+.hero-content h2 {
+    color: var(--color-fade);
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    font-weight: 400;
 }
 
-.project-image, .figma-embed iframe {
-    max-width: 100%;
-    height: auto; 
-    display: block;
-    margin: 25px auto; /* Centrer l'image et l'iframe */
-    border-radius: 6px;
-    /* Ajoutez une bordure discrète aux visuels */
-    border: 1px solid rgba(255, 255, 255, 0.1) !important; 
+.hero-content p {
+    color: var(--color-text);
+    font-size: 1.1em;
+    margin-bottom: 40px;
 }
 
-.projet-link {
-    color: var(--color-secondary);
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block; 
-    margin-top: 15px;
-    transition: color 0.2s;
-}
-
-/* ======================================================================
-    6. CONTACT & FOOTER
-    ====================================================================== */
-
-#contact {
-    text-align: center;
-    background-color: var(--color-card-bg); /* Fond contact plus clair pour la séparation */
-    padding: 40px 10%;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.social-links {
-    margin-top: 20px;
+/* Boutons CTA */
+.cta-group {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
-
-.social-link {
+.cta-button {
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+.cta-button.primary {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    border: 2px solid var(--color-secondary);
+}
+.cta-button.primary:hover {
+    background: #1e7e34;
+    box-shadow: 0 0 20px var(--color-secondary);
+}
+.cta-button.secondary {
+    background: transparent;
     color: var(--color-primary);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1em;
+    border: 2px solid var(--color-primary);
+}
+.cta-button.secondary:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
 }
 
-footer {
-    background-color: #111; /* Fond du footer très sombre */
-    color: var(--color-light-accent);
+
+/* ======================================================================
+    3. EXPERTISE (Grille dynamique)
+    ====================================================================== */
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.expertise-card {
+    background-color: var(--color-light-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-pro);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-bottom: 5px solid var(--color-primary);
+}
+
+.expertise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.icon-large {
+    font-size: 2.5em;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.expertise-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    color: var(--color-white) !important;
+}
+
+.expertise-card p {
+    color: var(--color-fade);
+    margin-bottom: 15px;
+}
+
+.skill-list {
+    list-style: none;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+.skill-list li {
+    padding: 5px 0;
+    color: var(--color-text);
+}
+
+
+/* ======================================================================
+    4. PROJETS (Conteneurs clairs)
+    ====================================================================== */
+
+.projets-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.projet-card {
+    background-color: var(--color-navy);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-pro);
     text-align: center;
-    padding: 15px 0;
-    font-size: 0.9em;
+    border: 1px solid var(--color-primary); /* Bordure pour mettre en valeur */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.projet-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 5px;
+    font-size: 1.6em;
+}
+
+.role-pro {
+    color: var(--color-fade);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.projet-link {
+    color: var(--color-secondary);
+    font-weight: bold;
+    display: inline-block; 
+    margin-top: 20px;
+    transition: color 0.3s;
+}
+
+/* Style spécifique pour l'iframe Figma */
+.figma-embed iframe {
+    max-width: 100%;
+    height: auto; 
+    display: block;
+    margin: 25px auto;
+    border-radius: 6px;
+    min-height: 450px; /* S'assure qu'il n'est pas coupé */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
 /* ======================================================================
-    7. RESPONSIVITÉ SIMPLE
+    5. CONTACT & FOOTER
     ====================================================================== */
+
+.contact-info p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: var(--color-text);
+}
+.icon-small {
+    margin-right: 10px;
+    color: var(--color-primary);
+}
+
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-link {
+    color: var(--color-fade);
+    transition: color 0.3s, transform 0.3s;
+}
+.social-link:hover {
+    color: var(--color-primary);
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #0d1624; /* Très sombre pour le pied de page */
+    color: var(--color-fade);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ======================================================================
+    6. RESPONSIVITÉ
+    ====================================================================== */
+
+@media (max-width: 900px) {
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 @media (max-width: 768px) {
     #navbar {
         flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 10px;
     }
     .nav-links {
         width: 100%;
         margin-top: 10px;
         justify-content: center;
+        gap: 15px;
     }
     .nav-links a {
-        margin: 5px 10px;
+        margin-left: 0;
+        font-size: 0.9em;
     }
-    .competence-group {
-        flex-basis: 100%; 
+    .lang-switcher {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
     }
-    header#profil {
-        padding-bottom: 80px;
+    .hero-content h1 {
+        font-size: 2.5em;
     }
-    header#profil::after {
-        bottom: -40px; 
+    .cta-group {
+        flex-direction: column;
+        gap: 15px;
     }
 }
