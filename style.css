@@ -190,7 +190,7 @@ h2 {
 
 .expertise-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* 2 colonnes par défaut */
     gap: 30px;
     text-align: left;
 }
@@ -232,8 +232,12 @@ h2 {
     border-top: 1px dashed rgba(255, 255, 255, 0.1);
 }
 .skill-list li {
-    padding: 5px 0;
+    padding: 8px 0;
     color: var(--color-text);
+}
+.skill-list li i {
+    color: var(--color-primary);
+    margin-right: 8px;
 }
 
 
@@ -270,6 +274,18 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* STYLE POUR LES IMAGES/CAPTURES */
+.projet-card .project-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 25px auto;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    object-fit: cover; /* Assure que l'image couvre bien l'espace */
+}
+
 .projet-link {
     color: var(--color-secondary);
     font-weight: bold;
@@ -285,13 +301,17 @@ h2 {
     display: block;
     margin: 25px auto;
     border-radius: 6px;
-    min-height: 450px; /* S'assure qu'il n'est pas coupé */
+    min-height: 450px; 
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
 /* ======================================================================
     5. CONTACT & FOOTER
     ====================================================================== */
+
+#contact {
+    background-color: var(--color-light-bg);
+}
 
 .contact-info p {
     font-size: 1.2em;
@@ -320,7 +340,7 @@ h2 {
 }
 
 footer {
-    background-color: #0d1624; /* Très sombre pour le pied de page */
+    background-color: #0d1624; 
     color: var(--color-fade);
     text-align: center;
     padding: 20px 0;
@@ -332,7 +352,7 @@ footer {
     6. RESPONSIVITÉ
     ====================================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
     .expertise-grid {
         grid-template-columns: 1fr;
     }
@@ -350,17 +370,11 @@ footer {
         justify-content: center;
         gap: 15px;
     }
-    .nav-links a {
-        margin-left: 0;
-        font-size: 0.9em;
-    }
-    .lang-switcher {
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
-    }
     .hero-content h1 {
         font-size: 2.5em;
+    }
+    .hero-content h2 {
+        font-size: 1.2em;
     }
     .cta-group {
         flex-direction: column;
