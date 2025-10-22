@@ -72,7 +72,7 @@ body {
 }
 
 /* ======================================================================
-    2. HEADER / PROFIL (BANDEAU BLEU) - CORRIGÉ POUR L'INTÉGRATION
+    2. HEADER / PROFIL (BANDEAU BLEU) - CORRIGÉ AVEC EFFET DE PENTE
     ====================================================================== */
 
 header#profil {
@@ -87,7 +87,7 @@ header#profil {
     overflow: hidden; /* Cache les débordements de la pente */
 }
 
-/* Pseudo-élément pour créer la pente */
+/* Pseudo-élément pour créer la pente et supprimer la "coupure" */
 header#profil::after {
     content: '';
     position: absolute;
@@ -95,7 +95,7 @@ header#profil::after {
     left: 0;
     width: 100%;
     height: 100px;
-    background-color: var(--color-primary); /* Couleur du bandeau */
+    background-color: var(--color-primary); /* Doit être la même couleur que l'en-tête */
     transform: skewY(-3deg); /* Applique l'effet de pente */
     z-index: 1;
 }
