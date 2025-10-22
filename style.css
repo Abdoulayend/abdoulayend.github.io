@@ -72,16 +72,38 @@ body {
 }
 
 /* ======================================================================
-    2. HEADER / PROFIL (BANDEAU BLEU)
+    2. HEADER / PROFIL (BANDEAU BLEU) - CORRIGÉ POUR L'INTÉGRATION
     ====================================================================== */
 
 header#profil {
     background-color: var(--color-primary);
     color: var(--color-white);
-    padding: 100px 10%;
+    /* Augmente le padding bas pour faire de la place à la pente */
+    padding: 100px 10%; 
+    padding-bottom: 120px; 
     text-align: center;
+    
+    position: relative; 
+    overflow: hidden; /* Cache les débordements de la pente */
+}
+
+/* Pseudo-élément pour créer la pente */
+header#profil::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; /* Déplace la base de la pente vers le bas */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: var(--color-primary); /* Couleur du bandeau */
+    transform: skewY(-3deg); /* Applique l'effet de pente */
+    z-index: 1;
+}
+
+/* Assure que le texte et les boutons restent au-dessus de la pente */
+header#profil > * {
     position: relative;
-    overflow: hidden;
+    z-index: 2;
 }
 
 header h1 {
@@ -139,7 +161,7 @@ section h2 {
 }
 
 /* ======================================================================
-    4. COMPÉTENCES (Empilées en liste, comme à l'origine)
+    4. COMPÉTENCES
     ====================================================================== */
 
 #competences {
@@ -176,7 +198,7 @@ section h2 {
 }
 
 /* ======================================================================
-    5. PROJETS (Empilés par défaut, sans grille complexe)
+    5. PROJETS
     ====================================================================== */
 
 .projet-card {
@@ -260,5 +282,12 @@ footer {
     }
     .competence-group {
         flex-basis: 100%; 
+    }
+    /* Ajustement de la pente sur mobile */
+    header#profil {
+        padding-bottom: 80px;
+    }
+    header#profil::after {
+        bottom: -40px; 
     }
 }
