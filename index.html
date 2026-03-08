@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABDOULAYE NDIAYE | Portfolio Professionnel</title>
+    <title>ABDOULAYE NDIAYE | Cybersécurité, Dev & Génie Civil</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -18,8 +18,8 @@
             <a href="#contact">Contact</a>
         </div>
         <div class="lang-switcher">
-            <button class="active">FR</button>
-            <button>EN</button>
+            <button id="lang-fr" class="active">FR</button>
+            <button id="lang-en">EN</button>
         </div>
     </nav>
     
@@ -27,11 +27,11 @@
         <div class="hero-content">
             <span class="tagline">Profil Hybride : Génie Civil & Technologies Numériques</span>
             <h1>ABDOULAYE NDIAYE</h1>
-            <h2>Infrastructures, Cybersécurité & E-business</h2>
-            <p>Étudiant polyvalent alliant la rigueur scientifique du Génie Civil à une expertise en solutions numériques sécurisées et design UX/UI.</p>
+            <h2>Génie Civil, Cybersécurité & Développement Web/Mobile</h2>
+            <p>Mon approche combine <strong>rigueur technique</strong> et <strong>conception centrée utilisateur</strong> pour livrer des solutions performantes, sécurisées et complètes.</p>
             
             <div class="cta-group">
-                <a href="Cv Informatique.pdf" download class="cta-button primary">Télécharger mon CV <i class="fas fa-download"></i></a> 
+                <a href="cv-abdoulaye-ndiaye.pdf" download class="cta-button primary">Télécharger mon CV <i class="fas fa-download"></i></a> 
                 <a href="#contact" class="cta-button secondary">Me Contacter</a>
             </div>
         </div>
@@ -39,39 +39,43 @@
 
     <section id="expertise" class="section-padding">
         <h2>Expertise et Compétences 🛠️</h2>
-        <p class="section-intro">Mes compétences clés, structurées pour répondre aux défis numériques modernes.</p>
+        <p class="section-intro">Mes compétences clés, structurées pour répondre aux défis techniques et numériques modernes.</p>
         
         <div class="expertise-grid">
+            
             <div class="expertise-card">
                 <i class="fas fa-shield-alt icon-large"></i>
                 <h3>Développement & Sécurité</h3>
+                <p>Création de solutions robustes et protection contre les menaces numériques.</p>
                 <ul class="skill-list">
-                    <li><i class="fas fa-mobile-alt"></i> <strong>Mobile :</strong> Flutter, Firebase, API REST.</li>
-                    <li><i class="fas fa-shield-virus"></i> <strong>Sécurité :</strong> Pentesting, OSINT, Cryptographie.</li>
-                    <li><i class="fas fa-code"></i> <strong>Web :</strong> Java, PHP/MySQL, HTML/CSS.</li>
-                    <li><i class="fas fa-network-wired"></i> <strong>Réseaux :</strong> Installation et gestion systèmes.</li>
+                    <li><i class="fas fa-mobile-alt"></i> <strong>Mobile :</strong> Flutter, Dart, Firebase.</li>
+                    <li><i class="fas fa-shield-virus"></i> <strong>Cybersécurité :</strong> Pentesting, OSINT, Analyste certifié.</li>
+                    <li><i class="fas fa-laptop-code"></i> <strong>Web :</strong> Java, PHP/MySQL, HTML/CSS.</li>
+                    <li><i class="fas fa-network-wired"></i> <strong>Réseaux :</strong> Installation et configuration.</li>
                 </ul>
             </div>
             
             <div class="expertise-card">
                 <i class="fas fa-palette icon-large"></i>
                 <h3>Design & E-commerce</h3>
+                <p>Conception centrée utilisateur et mise en place de stratégies de vente en ligne.</p>
                 <ul class="skill-list">
-                    <li><i class="fas fa-drafting-compass"></i> <strong>UX/UI Design :</strong> Figma (Maquettage & Prototypage).</li>
+                    <li><i class="fas fa-drafting-compass"></i> <strong>UX/UI Design :</strong> Wireframing et prototypage (Figma).</li>
                     <li><i class="fas fa-shopping-cart"></i> <strong>E-commerce :</strong> Shopify, Branding, Marketing.</li>
-                    <li><i class="fas fa-magic"></i> <strong>Outils :</strong> Canva, CapCut, ChatGPT.</li>
-                    <li><i class="fas fa-users"></i> <strong>Soft Skills :</strong> Rigueur, Esprit d'analyse.</li>
+                    <li><i class="fas fa-tools"></i> <strong>Outils :</strong> Canva, CapCut, ChatGPT.</li>
+                    <li><i class="fas fa-handshake"></i> <strong>Soft Skills :</strong> Rigueur, Communication claire.</li>
                 </ul>
             </div>
 
             <div class="expertise-card">
                 <i class="fas fa-hard-hat icon-large"></i>
                 <h3>Génie Civil & Technique</h3>
+                <p>Application de la rigueur technique dans la conception et la gestion de projets structurels.</p>
                 <ul class="skill-list">
-                    <li><i class="fas fa-pencil-ruler"></i> <strong>Dessin :</strong> Lecture de plans, AutoCAD.</li>
+                    <li><i class="fas fa-pencil-ruler"></i> <strong>Dessin Technique :</strong> Lecture de plans, AutoCAD.</li>
                     <li><i class="fas fa-road"></i> <strong>Infrastructures :</strong> Géotechnique et Normes QHSE.</li>
-                    <li><i class="fas fa-tasks"></i> <strong>Gestion :</strong> Suivi d'activités techniques.</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>Rigueur :</strong> Respect des cahiers des charges.</li>
+                    <li><i class="fas fa-tasks"></i> <strong>Gestion :</strong> Planification et suivi d'activités techniques.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Rigueur :</strong> Analyse et respect des cahiers des charges.</li>
                 </ul>
             </div>
         </div>
@@ -79,37 +83,81 @@
 
     <section id="projets" class="section-padding section-alt">
         <h2>Projets Récents et Études de Cas 💡</h2>
+        <p class="section-intro">Réalisations concrètes séparées par domaine d'intervention.</p>
+        
         <div class="projets-container">
+            
             <article class="projet-card">
-                <h3>Ruqaya Store / The Vastora</h3>
-                <p class="role-pro">Rôle : Créateur, Brand Manager et Spécialiste UX/UI.</p>
-                <p>Développement de boutiques e-commerce complètes avec optimisation de l'expérience utilisateur et stratégie marketing.</p>
-                <a href="https://ruqayastore.com" target="_blank" class="projet-link">Visiter Ruqaya Store →</a>
+                <h3><i class="fas fa-store"></i> Ruqaya Store</h3>
+                <p class="role-pro">Rôle : Développeur E-commerce & Brand Manager.</p>
+                <p>Conception et développement d'une boutique en ligne lifestyle complète.</p>
+                <a href="https://ruqayastore.com" target="_blank" class="projet-link">Visiter le site →</a>
             </article>
 
             <article class="projet-card">
-                <h3>Prototype Interactif AlloPharmacie</h3>
-                <p class="role-pro">Rôle : UX/UI Designer (Figma).</p>
-                <p>Conception d'une application de santé facilitant l'accès aux pharmacies de garde à travers un prototype haute fidélité.</p>
+                <h3><i class="fas fa-shopping-bag"></i> Le Bassima</h3>
+                <p class="role-pro">Rôle : Concepteur et Intégrateur E-commerce.</p>
+                <p>Mise à jour et gestion de la boutique en ligne spécialisée.</p>
+                <a href="https://lebassima.com" target="_blank" class="projet-link">Visiter le site →</a>
             </article>
+
+            <article class="projet-card">
+                <h3><i class="fas fa-tshirt"></i> La Rue Du Style</h3>
+                <p class="role-pro">Rôle : Web Designer et Intégrateur E-commerce.</p>
+                <img src="laruedustyle-apercu.jpg.png" alt="Aperçu La Rue Du Style" class="project-image">
+                <p>Développement d'une plateforme de mode avec identité visuelle forte.</p>
+                <a href="https://laruedustyle.com" target="_blank" class="projet-link">Visiter le site →</a> 
+            </article>
+
+            <article class="projet-card">
+                <h3><i class="fas fa-shopping-cart"></i> The Vastora</h3>
+                <p class="role-pro">Rôle : Créateur et Gestionnaire d'Opérations.</p>
+                <img src="thevastora-apercu.jpg.png" alt="Aperçu The Vastora" class="project-image">
+                <p>Optimisation du parcours d'achat et gestion de marque e-commerce.</p>
+                <a href="https://thevastora.com" target="_blank" class="projet-link">Visiter le site →</a>
+            </article>
+
+            <article class="projet-card">
+                <h3><i class="fas fa-book"></i> Ebook : "Libère ta voix"</h3>
+                <p class="role-pro">Rôle : Web Designer et Intégrateur Web.</p>
+                <img src="libereta-voix-maquette.jpg.PNG" alt="Maquette Ebook" class="project-image">
+                <p>Création graphique et page de vente sur systeme.io.</p>
+                <a href="https://globalminds.systeme.io" target="_blank" class="projet-link">Voir la page de vente →</a>
+            </article>
+
+            <article class="projet-card" id="projet-uxui">
+                <h3><i class="fab fa-figma"></i> Prototype AlloPharmacie</h3>
+                <p class="role-pro">Rôle : UX/UI Designer (Figma).</p>
+                <div class="figma-embed">
+                    <iframe style="border: 1px solid rgba(255, 255, 255, 0.1);" 
+                        width="100%" 
+                        height="450" 
+                        src="https://embed.figma.com/proto/gHa7wHjZe4U9BiASy0iqIW/Untitled?page-id=46%3A2&node-id=210-342&p=f&viewport=632%2C-56%2C0.47&scaling=scale-down&content-scaling=fixed&starting-point-node-id=631%3A1181&embed-host=share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <a href="https://www.figma.com/design/gHa7wHjZe4U9BiASy0iqIW/Untitled?node-id=46-2&t=C72WfjZ2s9XLTsRv-1" target="_blank" class="projet-link">Ouvrir le fichier Figma complet <i class="fas fa-external-link-alt"></i></a>
+            </article>
+            
         </div>
     </section>
 
     <section id="contact" class="section-padding">
         <h2>Contactez-moi 📞</h2>
         <div class="contact-info">
-            <p><i class="fas fa-envelope icon-small"></i> <strong>Email :</strong> abdoulayendiayesn16@gmail.com</p>
+            <p><i class="fas fa-envelope icon-small"></i> <strong>Email :</strong> abdourito11@gmail.com</p>
             <p><i class="fas fa-phone icon-small"></i> <strong>Téléphone :</strong> +221 78 185 57 86</p>
-            <p><i class="fas fa-map-marker-alt icon-small"></i> <strong>Adresse :</strong> Thiès, Sénégal</p>
         </div>
         <div class="social-links">
-            <a href="https://github.com/Abdoulayend" target="_blank" class="social-link"><i class="fab fa-github fa-2x"></i></a>
+            <a href="https://github.com/Abdoulayend/abdoulayend.github.io" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github fa-2x"></i></a>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2026 Abdoulaye Ndiaye. Tous droits réservés.</p>
     </footer>
+
+    <script src="script.js.js"></script>
 
 </body>
 </html>
