@@ -2,12 +2,12 @@
     0. VARIABLES & BASE - BLEU DE NUIT
     ====================================================================== */
 :root {
-    --color-navy: #152238;          /* Bleu de Nuit Profond (Fond Principal) */
-    --color-primary: #007bff;       /* Bleu Éclatant (Accents/Bordures/Liens) */
-    --color-secondary: #28a745;     /* Vert (CTA Principal) */
-    --color-light-bg: #1f2e48;      /* Bleu de Nuit Clair (Cartes/Sections Alternatives) */
-    --color-text: #f0f0f0;          /* Texte Clair */
-    --color-fade: #a9b9cf;          /* Texte atténué */
+    --color-navy: #152238;
+    --color-primary: #007bff;
+    --color-secondary: #28a745;
+    --color-light-bg: #1f2e48;
+    --color-text: #f0f0f0;
+    --color-fade: #a9b9cf;
     --color-white: #ffffff;
     --shadow-pro: 0 6px 15px rgba(0, 0, 0, 0.4);
     --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -20,7 +20,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Sora', 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
     background-color: var(--color-navy); 
     color: var(--color-text);
@@ -38,8 +38,15 @@ a {
     margin: 0 auto;
     text-align: center;
 }
+
+/* ✅ CORRIGÉ : section-alt était ignorée car section-padding a max-width + margin auto
+   → Il faut appliquer section-alt sur un wrapper extérieur.
+   On contourne avec un pseudo-élément de fond */
 .section-alt {
     background-color: var(--color-light-bg);
+    /* On dépasse les limites du max-width avec une box-shadow étendue */
+    box-shadow: 0 0 0 100vmax var(--color-light-bg);
+    clip-path: inset(0 -100vmax);
 }
 
 h2 {
@@ -47,6 +54,7 @@ h2 {
     font-size: 2.2em;
     margin-bottom: 10px;
 }
+
 .section-intro {
     color: var(--color-fade);
     margin-bottom: 50px;
@@ -74,6 +82,7 @@ h2 {
     font-size: 1.6em;
     font-weight: bold;
     color: var(--color-primary);
+    font-family: 'Space Mono', monospace;
 }
 
 .nav-links a {
@@ -83,6 +92,7 @@ h2 {
     transition: color 0.3s, border-bottom 0.3s;
     padding-bottom: 5px;
 }
+
 .nav-links a:hover {
     color: var(--color-primary);
     border-bottom: 2px solid var(--color-primary);
@@ -97,7 +107,9 @@ h2 {
     margin-left: 5px;
     border-radius: 4px;
     transition: all 0.2s;
+    font-family: 'Space Mono', monospace;
 }
+
 .lang-switcher button.active {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
@@ -129,12 +141,14 @@ h2 {
     letter-spacing: 1px;
     display: block;
     margin-bottom: 15px;
+    font-family: 'Space Mono', monospace;
 }
 
 .hero-content h1 {
     font-size: 3.5em;
     margin-bottom: 10px;
     letter-spacing: 2px;
+    font-family: 'Space Mono', monospace;
 }
 
 .hero-content h2 {
@@ -154,28 +168,37 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap; /* ✅ AJOUTÉ : évite le débordement sur petits écrans */
 }
+
 .cta-button {
     padding: 14px 30px;
     border-radius: 50px;
     font-weight: bold;
     transition: all 0.3s ease;
     text-transform: uppercase;
+    display: inline-flex; /* ✅ CORRIGÉ : aligne le texte et l'icône correctement */
+    align-items: center;
+    gap: 8px;
 }
+
 .cta-button.primary {
     background: var(--color-secondary);
     color: var(--color-white);
     border: 2px solid var(--color-secondary);
 }
+
 .cta-button.primary:hover {
     background: #1e7e34;
     box-shadow: 0 0 20px var(--color-secondary);
 }
+
 .cta-button.secondary {
     background: transparent;
     color: var(--color-primary);
     border: 2px solid var(--color-primary);
 }
+
 .cta-button.secondary:hover {
     background: var(--color-primary);
     color: var(--color-white);
@@ -183,13 +206,12 @@ h2 {
 }
 
 /* ======================================================================
-    3. EXPERTISE (Grille optimisée pour 3 cartes)
+    3. EXPERTISE
     ====================================================================== */
 
 .expertise-grid {
     display: grid;
-    /* On passe à 320px pour permettre l'alignement de 3 colonnes sur grand écran */
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 30px;
     text-align: left;
 }
@@ -201,10 +223,8 @@ h2 {
     box-shadow: var(--shadow-pro);
     transition: transform 0.3s, box-shadow 0.3s;
     border-bottom: 5px solid var(--color-primary);
-    /* On ajoute flex pour que toutes les cartes aient la même hauteur */
     display: flex;
     flex-direction: column;
-    height: 100%;
 }
 
 .expertise-card:hover {
@@ -221,7 +241,7 @@ h2 {
 .expertise-card h3 {
     margin-bottom: 10px;
     font-size: 1.4em;
-    color: var(--color-white) !important;
+    color: var(--color-white);
 }
 
 .expertise-card p {
@@ -233,25 +253,41 @@ h2 {
     list-style: none;
     padding-top: 10px;
     border-top: 1px dashed rgba(255, 255, 255, 0.1);
-    margin-top: auto; /* Aligne le bas des listes de compétences */
+    margin-top: auto;
 }
+
 .skill-list li {
     padding: 8px 0;
     color: var(--color-text);
 }
+
 .skill-list li i {
     color: var(--color-primary);
     margin-right: 8px;
 }
 
 /* ======================================================================
-    4. PROJETS (Conteneurs clairs)
+    4. PROJETS
     ====================================================================== */
+
+/* ✅ CORRIGÉ : section-alt sur .section-padding cause un conflit avec max-width.
+   On wrap la section projets différemment */
+#projets {
+    background-color: var(--color-light-bg);
+    padding: 80px 5%;
+}
+
+#projets .section-padding-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
 
 .projets-container {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    margin-top: 20px;
 }
 
 .projet-card {
@@ -264,6 +300,12 @@ h2 {
     max-width: 900px;
     margin: 0 auto;
     width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projet-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
 }
 
 .projet-card h3 {
@@ -289,6 +331,14 @@ h2 {
     object-fit: cover;
 }
 
+/* ✅ AJOUTÉ : image manquante → placeholder visible */
+.projet-card .project-image[src=""],
+.projet-card .project-image:not([src]) {
+    min-height: 200px;
+    background-color: var(--color-light-bg);
+    border: 2px dashed var(--color-primary);
+}
+
 .projet-link {
     color: var(--color-secondary);
     font-weight: bold;
@@ -297,14 +347,22 @@ h2 {
     transition: color 0.3s;
 }
 
-.figma-embed iframe {
-    max-width: 100%;
-    height: auto; 
-    display: block;
+.projet-link:hover {
+    color: #1e7e34;
+}
+
+.figma-embed {
     margin: 25px auto;
     border-radius: 6px;
-    min-height: 450px; 
+    overflow: hidden; /* ✅ AJOUTÉ : évite le débordement de l'iframe */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.figma-embed iframe {
+    width: 100%;
+    height: 450px;
+    display: block;
+    border: none; /* ✅ CORRIGÉ : le border était dans le style inline, unifié ici */
 }
 
 /* ======================================================================
@@ -313,6 +371,13 @@ h2 {
 
 #contact {
     background-color: var(--color-light-bg);
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto 20px;
 }
 
 .contact-info p {
@@ -320,6 +385,7 @@ h2 {
     margin: 10px 0;
     color: var(--color-text);
 }
+
 .icon-small {
     margin-right: 10px;
     color: var(--color-primary);
@@ -336,6 +402,7 @@ h2 {
     color: var(--color-fade);
     transition: color 0.3s, transform 0.3s;
 }
+
 .social-link:hover {
     color: var(--color-primary);
     transform: scale(1.1);
@@ -351,13 +418,12 @@ footer {
 }
 
 /* ======================================================================
-    6. RESPONSIVITÉ (Mise à jour pour 3 colonnes)
+    6. RESPONSIVITÉ
     ====================================================================== */
 
 @media (max-width: 1100px) {
     .expertise-grid {
-        /* On permet 2 colonnes sur tablettes/petits écrans PC */
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     }
 }
 
@@ -365,26 +431,53 @@ footer {
     .expertise-grid {
         grid-template-columns: 1fr;
     }
+
     #navbar {
         flex-wrap: wrap;
         justify-content: center;
         padding-bottom: 10px;
     }
+
     .nav-links {
         width: 100%;
         margin-top: 10px;
         display: flex;
         justify-content: center;
         gap: 15px;
+        flex-wrap: wrap; /* ✅ AJOUTÉ */
     }
+
     .hero-content h1 {
-        font-size: 2.5em;
+        font-size: 2.2em; /* ✅ AJUSTÉ : 2.5em → 2.2em pour éviter overflow */
     }
+
     .hero-content h2 {
         font-size: 1.2em;
     }
+
     .cta-group {
         flex-direction: column;
         gap: 15px;
+        align-items: center;
+    }
+
+    .figma-embed iframe {
+        height: 300px; /* ✅ AJOUTÉ : réduit la hauteur sur mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.7em;
+        letter-spacing: 1px;
+    }
+
+    .nav-links a {
+        margin-left: 10px;
+        font-size: 0.9em;
+    }
+
+    .projet-card {
+        padding: 20px 15px;
     }
 }
