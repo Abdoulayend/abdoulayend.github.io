@@ -112,7 +112,7 @@ h2 {
     background-color: var(--color-navy);
     padding: 120px 5%;
     text-align: center;
-    border-bottom: 4px solid var(--color-primary); /* Bordure pro */
+    border-bottom: 4px solid var(--color-primary); 
     min-height: 70vh;
     display: flex;
     align-items: center;
@@ -150,7 +150,6 @@ h2 {
     margin-bottom: 40px;
 }
 
-/* Boutons CTA */
 .cta-group {
     display: flex;
     justify-content: center;
@@ -183,14 +182,14 @@ h2 {
     box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
 }
 
-
 /* ======================================================================
-    3. EXPERTISE (Grille dynamique)
+    3. EXPERTISE (Grille optimisée pour 3 cartes)
     ====================================================================== */
 
 .expertise-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* 2 colonnes par défaut */
+    /* On passe à 320px pour permettre l'alignement de 3 colonnes sur grand écran */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
     gap: 30px;
     text-align: left;
 }
@@ -202,6 +201,10 @@ h2 {
     box-shadow: var(--shadow-pro);
     transition: transform 0.3s, box-shadow 0.3s;
     border-bottom: 5px solid var(--color-primary);
+    /* On ajoute flex pour que toutes les cartes aient la même hauteur */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .expertise-card:hover {
@@ -230,6 +233,7 @@ h2 {
     list-style: none;
     padding-top: 10px;
     border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    margin-top: auto; /* Aligne le bas des listes de compétences */
 }
 .skill-list li {
     padding: 8px 0;
@@ -239,7 +243,6 @@ h2 {
     color: var(--color-primary);
     margin-right: 8px;
 }
-
 
 /* ======================================================================
     4. PROJETS (Conteneurs clairs)
@@ -257,9 +260,10 @@ h2 {
     border-radius: 10px;
     box-shadow: var(--shadow-pro);
     text-align: center;
-    border: 1px solid var(--color-primary); /* Bordure pour mettre en valeur */
+    border: 1px solid var(--color-primary); 
     max-width: 900px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .projet-card h3 {
@@ -274,7 +278,6 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* STYLE POUR LES IMAGES/CAPTURES */
 .projet-card .project-image {
     max-width: 100%;
     height: auto;
@@ -283,7 +286,7 @@ h2 {
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-    object-fit: cover; /* Assure que l'image couvre bien l'espace */
+    object-fit: cover;
 }
 
 .projet-link {
@@ -294,7 +297,6 @@ h2 {
     transition: color 0.3s;
 }
 
-/* Style spécifique pour l'iframe Figma */
 .figma-embed iframe {
     max-width: 100%;
     height: auto; 
@@ -349,16 +351,20 @@ footer {
 }
 
 /* ======================================================================
-    6. RESPONSIVITÉ
+    6. RESPONSIVITÉ (Mise à jour pour 3 colonnes)
     ====================================================================== */
 
-@media (max-width: 950px) {
+@media (max-width: 1100px) {
     .expertise-grid {
-        grid-template-columns: 1fr;
+        /* On permet 2 colonnes sur tablettes/petits écrans PC */
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
     #navbar {
         flex-wrap: wrap;
         justify-content: center;
@@ -367,6 +373,7 @@ footer {
     .nav-links {
         width: 100%;
         margin-top: 10px;
+        display: flex;
         justify-content: center;
         gap: 15px;
     }
