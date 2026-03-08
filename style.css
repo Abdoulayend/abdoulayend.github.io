@@ -338,6 +338,8 @@ h2 {
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     object-fit: cover;
+    /* ✅ FIX : l'image ne bloque plus les clics en dessous */
+    pointer-events: none;
 }
 
 /* ✅ AJOUTÉ : image manquante → placeholder visible */
@@ -351,13 +353,21 @@ h2 {
 .projet-link {
     color: var(--color-secondary);
     font-weight: bold;
-    display: inline-block; 
+    display: inline-block;
     margin-top: 20px;
     transition: color 0.3s;
+    /* ✅ FIX MOBILE : zone de clic agrandie */
+    padding: 12px 24px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 50px;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
 }
 
 .projet-link:hover {
-    color: #1e7e34;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
 }
 
 .figma-embed {
